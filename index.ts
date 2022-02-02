@@ -18,6 +18,7 @@ import { PopulateType, PopulateSchema } from "./types/Populate";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
 import { UniversityType, UniversitySchema } from "./types/University";
+import { UserSchema, UserType } from "./types/UserType";
 
 export {
   CenterSchema,
@@ -46,4 +47,6 @@ export {
   StudyType,
   UniversitySchema,
   UniversityType,
+  UserSchema,
+  UserType,
 };
