@@ -27,6 +27,12 @@ export const FilterSchema = z
     studyId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
+    cityId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
+    countryId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
