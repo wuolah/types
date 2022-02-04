@@ -1,3 +1,4 @@
+import { BookmarkSubjectType, BookmarkType, BookmarkSubjectStatus } from "./types/Bookmark";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
@@ -22,6 +23,9 @@ import { UniversityType, UniversitySchema } from "./types/University";
 import { UserSchema, UserType } from "./types/UserType";
 
 export {
+  BookmarkSubjectStatus,
+  BookmarkSubjectType,
+  BookmarkType,
   CenterSchema,
   CenterType,
   CommunitySchema,
