@@ -1,4 +1,8 @@
-import { BookmarkSubjectType, BookmarkType, BookmarkSubjectStatus } from "./types/Bookmark";
+import {
+  BookmarkSubjectType,
+  BookmarkType,
+  BookmarkSubjectStatus,
+} from "./types/Bookmark";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
