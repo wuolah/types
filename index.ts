@@ -1,3 +1,8 @@
+import {
+  BookmarkSubjectType,
+  BookmarkType,
+  BookmarkSubjectStatus,
+} from "./types/Bookmark";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
@@ -18,10 +23,14 @@ import { PopulateType, PopulateSchema } from "./types/Populate";
 import { ProfileCommunityType, ProfileSchema, ProfileType } from "./types/ProfileType";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
+import { SubjectType, SubjectSchema } from "./types/Subject";
 import { UniversityType, UniversitySchema } from "./types/University";
 import { UserSchema, UserType } from "./types/UserType";
 
 export {
+  BookmarkSubjectStatus,
+  BookmarkSubjectType,
+  BookmarkType,
   CenterSchema,
   CenterType,
   CommunitySchema,
@@ -49,6 +58,8 @@ export {
   SortType,
   StudySchema,
   StudyType,
+  SubjectSchema,
+  SubjectType,
   UniversitySchema,
   UniversityType,
   UserSchema,
