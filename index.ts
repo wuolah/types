@@ -17,6 +17,7 @@ import { PaginationSchema, PaginationType } from "./types/Pagination";
 import { PopulateType, PopulateSchema } from "./types/Populate";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
+import { SubjectType, SubjectSchema } from "./types/Subject";
 import { UniversityType, UniversitySchema } from "./types/University";
 import { UserSchema, UserType } from "./types/UserType";
 
@@ -45,6 +46,8 @@ export {
   SortType,
   StudySchema,
   StudyType,
+  SubjectSchema,
+  SubjectType,
   UniversitySchema,
   UniversityType,
   UserSchema,
