@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export enum FileCategory {
+export enum DocumentCategory {
   APUNTES = "apuntes",
   EXAMENES = "exámenes",
   EJERCICIOS = "ejercicios",
@@ -9,15 +9,15 @@ export enum FileCategory {
   OTROS = "otros",
 }
 
-export const FileCategorySchema = z.nativeEnum(FileCategory);
+export const DocumentCategorySchema = z.nativeEnum(DocumentCategory);
 
-export const FileSchema = z.object({
+export const DocumentSchema = z.object({
   id: z.number().positive(),
   name: z.string(),
   userId: z.number().positive(),
   extension: z.string(),
   fileType: z.string(),
-  category: FileCategorySchema,
+  category: DocumentCategorySchema,
 });
 
-export type FileType = z.infer<typeof FileSchema>;
+export type DocumentType = z.infer<typeof DocumentSchema>;
