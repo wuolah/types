@@ -12,6 +12,8 @@ const stringToNumber = (defaultValue: number | null) => (val: unknown) =>
   parseInt(String(val), 10) || defaultValue;
 const stringToBoolean = (defaultValue: boolean) => (val: unknown) =>
   val != undefined ? val === "true" : defaultValue;
+const stringToVerified = (defaultValue: number | null) => (val: unknown) =>
+  val != undefined ? val === "true" ? 1 : val === "false" ? 0 : defaultValue : defaultValue;
 
 export const FilterSchema = z
   .object({
@@ -33,13 +35,16 @@ export const FilterSchema = z
     countryId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
+    communityId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
     category: DocumentCategorySchema.optional(),
 
     verified: z
-      .preprocess(stringToBoolean(false), z.boolean().default(false))
+      .preprocess(stringToVerified(null), z.number().nullable())
       .optional(),
   })
   .optional();

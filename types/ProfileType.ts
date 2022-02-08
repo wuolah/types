@@ -17,6 +17,8 @@ export type ProfileCommunityType = z.infer<typeof ProfileCommunitySchema>;
 export const ProfileSchema = z.object({
   id: z.number().positive(),
   nickname: z.string(),
+  popularity: z.number(),
+  money: z.number().positive(),
 });
 
 export type ProfileType = z.infer<typeof ProfileSchema>;
