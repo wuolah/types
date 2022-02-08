@@ -7,11 +7,11 @@ import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
 import {
-  FileCategory,
-  FileCategorySchema,
-  FileSchema,
-  FileType,
-} from "./types/File";
+  DocumentCategory,
+  DocumentCategorySchema,
+  DocumentSchema,
+  DocumentType,
+} from "./types/Document";
 import { FilterType, FilterSchema } from "./types/Filter";
 import { ListParamsType, ListParamsSchema } from "./types/ListParams";
 import {
@@ -20,6 +20,7 @@ import {
 } from "./types/MetaPagination";
 import { PaginationSchema, PaginationType } from "./types/Pagination";
 import { PopulateType, PopulateSchema } from "./types/Populate";
+import { ProfileCommunityType, ProfileSchema, ProfileType } from "./types/ProfileType";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
 import { SubjectType, SubjectSchema } from "./types/Subject";
@@ -36,10 +37,10 @@ export {
   CommunityType,
   DetailParamsSchema,
   DetailParamsType,
-  FileCategorySchema,
-  FileCategory,
-  FileSchema,
-  FileType,
+  DocumentCategorySchema,
+  DocumentCategory,
+  DocumentSchema,
+  DocumentType,
   FilterSchema,
   FilterType,
   ListParamsSchema,
@@ -50,6 +51,9 @@ export {
   PaginationType,
   PopulateSchema,
   PopulateType,
+  ProfileCommunityType,
+  ProfileSchema,
+  ProfileType,
   SortSchema,
   SortType,
   StudySchema,

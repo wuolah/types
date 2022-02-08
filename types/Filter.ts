@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { FileCategorySchema } from "./File";
+import { DocumentCategorySchema } from "./Document";
 
 /**
  * TODO - ESTO ES UN EJEMPLO
@@ -8,7 +8,7 @@ import { FileCategorySchema } from "./File";
  * para testear el funcionamiento.
  */
 
-const stringToNumber = (defaultValue: number) => (val: unknown) =>
+const stringToNumber = (defaultValue: number | null) => (val: unknown) =>
   parseInt(String(val), 10) || defaultValue;
 const stringToBoolean = (defaultValue: boolean) => (val: unknown) =>
   val != undefined ? val === "true" : defaultValue;
@@ -36,7 +36,7 @@ export const FilterSchema = z
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
-    category: FileCategorySchema.optional(),
+    category: DocumentCategorySchema.optional(),
 
     verified: z
       .preprocess(stringToBoolean(false), z.boolean().default(false))
