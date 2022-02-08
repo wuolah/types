@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { CommunitySchema, SubjectSchema } from "..";
+import { CommunitySchema } from "./Community";
+import { SubjectSchema } from "./Subject";
 
 export const CommunitySubjectSchema = z.object({
   id: z.number().positive(),
