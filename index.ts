@@ -5,6 +5,10 @@ import {
 } from "./types/Bookmark";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
+import {
+  CommunitySubjectSchema,
+  CommunitySubjectType,
+} from "./types/CommunitySubject";
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
 import {
   DocumentCategory,
@@ -20,7 +24,11 @@ import {
 } from "./types/MetaPagination";
 import { PaginationSchema, PaginationType } from "./types/Pagination";
 import { PopulateType, PopulateSchema } from "./types/Populate";
-import { ProfileCommunityType, ProfileSchema, ProfileType } from "./types/ProfileType";
+import {
+  ProfileCommunityType,
+  ProfileSchema,
+  ProfileType,
+} from "./types/ProfileType";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
 import { SubjectType, SubjectSchema } from "./types/Subject";
@@ -35,6 +43,8 @@ export {
   CenterType,
   CommunitySchema,
   CommunityType,
+  CommunitySubjectSchema,
+  CommunitySubjectType,
   DetailParamsSchema,
   DetailParamsType,
   DocumentCategorySchema,
