@@ -2,6 +2,8 @@ import {
   BookmarkSubjectType,
   BookmarkType,
   BookmarkSubjectStatus,
+  BookmarkDocumentType,
+  BookmarkUserType,
 } from "./types/Bookmark";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
@@ -38,6 +40,8 @@ import { UserSchema, UserType } from "./types/UserType";
 export {
   BookmarkSubjectStatus,
   BookmarkSubjectType,
+  BookmarkUserType,
+  BookmarkDocumentType,
   BookmarkType,
   CenterSchema,
   CenterType,
