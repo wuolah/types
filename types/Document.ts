@@ -18,6 +18,10 @@ export const DocumentSchema = z.object({
   extension: z.string(),
   fileType: z.string(),
   category: DocumentCategorySchema,
+  numPreviews: z.number().nonnegative().default(0),
+  numViews: z.number().nonnegative().default(0),
+  numDownloads: z.number().nonnegative().default(0),
+  s3Key: z.string(),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;
