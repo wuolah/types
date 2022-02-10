@@ -39,6 +39,9 @@ export const FilterSchema = z
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
+    profileId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
     category: DocumentCategorySchema.optional(),
 
     verified: z
