@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { BookmarkSubjectStatusSchema } from "./BookmarkSubject";
 import { DocumentCategorySchema } from "./Document";
 
 /**
@@ -43,6 +44,8 @@ export const FilterSchema = z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
     category: DocumentCategorySchema.optional(),
+    status: BookmarkSubjectStatusSchema.optional(),
+    usernames: z.array(z.string()).optional(),
 
     verified: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
