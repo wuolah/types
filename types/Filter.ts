@@ -57,14 +57,10 @@ export const FilterSchema = z
     profileId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
-    subjectId: z
-      .preprocess(stringToNumber(null), z.number().positive())
-      .optional(),
     category: z.union([
       z.array(DocumentCategorySchema),
       DocumentCategorySchema.optional()
       ]).optional(),
-    text: z.string().optional(),
 
     status: BookmarkSubjectStatusSchema.optional(),
     usernames: z.array(z.string()).optional(),
