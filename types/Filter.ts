@@ -17,9 +17,13 @@ const stringToBoolean = (defaultValue: boolean | null) => (val: unknown) =>
 export const FilterSchema = z
   .object({
     text: z.string().optional(),
-    userId: z
-      .preprocess(stringToNumber(null), z.number().positive())
-      .optional(),
+    userId: z.union([
+      z.array(
+        z.preprocess(stringToNumber(null), z.number().positive())
+      ),
+      z.preprocess(stringToNumber(null), z.number().positive())
+      ]).optional()
+    ,
     universityId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
@@ -47,7 +51,11 @@ export const FilterSchema = z
     subjectId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
-    category: DocumentCategorySchema.optional(),
+    category: z.union([
+      z.array(DocumentCategorySchema),
+      DocumentCategorySchema.optional()
+      ]).optional(),
+
     status: BookmarkSubjectStatusSchema.optional(),
     usernames: z.array(z.string()).optional(),
 
