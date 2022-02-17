@@ -22,6 +22,7 @@ export const DocumentSchema = z.object({
   numViews: z.number().nonnegative().default(0),
   numDownloads: z.number().nonnegative().default(0),
   s3Key: z.string(),
+  anonymous: z.boolean().default(false),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;

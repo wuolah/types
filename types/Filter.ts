@@ -11,7 +11,13 @@ import { DocumentCategorySchema } from "./Document";
 const stringToNumber = (defaultValue: number | null) => (val: unknown) =>
   parseInt(String(val), 10) || defaultValue;
 const stringToBoolean = (defaultValue: boolean | null) => (val: unknown) =>
-  val != undefined ? String(val) === "true" ? true : String(val) === "false" ? false : defaultValue: defaultValue;
+  val != undefined
+    ? String(val) === "true"
+      ? true
+      : String(val) === "false"
+      ? false
+      : defaultValue
+    : defaultValue;
 
 export const FilterSchema = z
   .object({
@@ -39,10 +45,14 @@ export const FilterSchema = z
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
+    subjectId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
     profileId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
     category: DocumentCategorySchema.optional(),
+    text: z.string().optional(),
 
     verified: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
