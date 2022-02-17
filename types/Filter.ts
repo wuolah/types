@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { BookmarkSubjectStatusSchema } from "./BookmarkSubject";
 import { DocumentCategorySchema } from "./Document";
 
 /**
@@ -21,9 +22,14 @@ const stringToBoolean = (defaultValue: boolean | null) => (val: unknown) =>
 
 export const FilterSchema = z
   .object({
-    userId: z
-      .preprocess(stringToNumber(null), z.number().positive())
-      .optional(),
+    text: z.string().optional(),
+    userId: z.union([
+      z.array(
+        z.preprocess(stringToNumber(null), z.number().positive())
+      ),
+      z.preprocess(stringToNumber(null), z.number().positive())
+      ]).optional()
+    ,
     universityId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
@@ -51,8 +57,17 @@ export const FilterSchema = z
     profileId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
-    category: DocumentCategorySchema.optional(),
+    subjectId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
+    category: z.union([
+      z.array(DocumentCategorySchema),
+      DocumentCategorySchema.optional()
+      ]).optional(),
     text: z.string().optional(),
+
+    status: BookmarkSubjectStatusSchema.optional(),
+    usernames: z.array(z.string()).optional(),
 
     verified: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { UserSchema } from "./UserType";
 
 export enum DocumentCategory {
   APUNTES = "apuntes",
@@ -23,6 +24,7 @@ export const DocumentSchema = z.object({
   numDownloads: z.number().nonnegative().default(0),
   s3Key: z.string(),
   anonymous: z.boolean().default(false),
+  user: UserSchema.optional()
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;
