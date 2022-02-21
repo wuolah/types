@@ -63,7 +63,10 @@ export const FilterSchema = z
       ]).optional(),
 
     status: BookmarkSubjectStatusSchema.optional(),
-    usernames: z.array(z.string()).optional(),
+    username: z.union([
+      z.array(z.string()),
+      z.string()
+    ]).optional(),
 
     verified: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
