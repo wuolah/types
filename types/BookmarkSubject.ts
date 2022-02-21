@@ -16,4 +16,5 @@ export type BookmarkSubjectType = {
   status: BookmarkSubjectStatus;
   subjectId: number;
   subject?: SubjectType;
+  createdAt: Date;
 };

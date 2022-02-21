@@ -7,4 +7,5 @@ export type BookmarkDocumentType = {
   user?: UserType;
   documentId: number;
   document?: DocumentType;
+  createdAt: Date;
 };
