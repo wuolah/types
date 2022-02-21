@@ -6,6 +6,7 @@ export const ProfileSchema = z.object({
   nickname: z.string(),
   popularity: z.number().nonnegative().default(0),
   money: z.number().nonnegative().default(0),
+  created: z.date(),
 });
 
 export type ProfileType = z.infer<typeof ProfileSchema>;
