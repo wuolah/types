@@ -22,6 +22,7 @@ export const DocumentSchema = z.object({
   numPreviews: z.number().nonnegative().default(0),
   numViews: z.number().nonnegative().default(0),
   numDownloads: z.number().nonnegative().default(0),
+  numBookmarks: z.number().nonnegative().default(0),
   s3Key: z.string(),
   anonymous: z.boolean().default(false),
   user: UserSchema.optional(),
