@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { FileCategorySchema } from "./File";
+import { BookmarkSubjectStatusSchema } from "./BookmarkSubject";
+import { DocumentCategorySchema } from "./Document";
 
 /**
  * TODO - ESTO ES UN EJEMPLO
@@ -8,16 +9,27 @@ import { FileCategorySchema } from "./File";
  * para testear el funcionamiento.
  */
 
-const stringToNumber = (defaultValue: number) => (val: unknown) =>
+const stringToNumber = (defaultValue: number | null) => (val: unknown) =>
   parseInt(String(val), 10) || defaultValue;
-const stringToBoolean = (defaultValue: boolean) => (val: unknown) =>
-  val != undefined ? val === "true" : defaultValue;
+const stringToBoolean = (defaultValue: boolean | null) => (val: unknown) =>
+  val != undefined
+    ? String(val) === "true"
+      ? true
+      : String(val) === "false"
+      ? false
+      : defaultValue
+    : defaultValue;
 
 export const FilterSchema = z
   .object({
-    userId: z
-      .preprocess(stringToNumber(null), z.number().positive())
-      .optional(),
+    text: z.string().optional(),
+    userId: z.union([
+      z.array(
+        z.preprocess(stringToNumber(null), z.number().positive())
+      ),
+      z.preprocess(stringToNumber(null), z.number().positive())
+      ]).optional()
+    ,
     universityId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
@@ -27,13 +39,40 @@ export const FilterSchema = z
     studyId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
+    cityId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
+    countryId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
+    communityId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
-    category: FileCategorySchema.optional(),
+    subjectId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
+    profileId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
+    category: z.union([
+      z.array(DocumentCategorySchema),
+      DocumentCategorySchema.optional()
+      ]).optional(),
+
+    status: BookmarkSubjectStatusSchema.optional(),
+    username: z.union([
+      z.array(z.string()),
+      z.string()
+    ]).optional(),
 
     verified: z
-      .preprocess(stringToBoolean(false), z.boolean().default(false))
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
+      .optional(),
+    visible: z
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
   })
   .optional();

@@ -1,12 +1,22 @@
+import {
+  BookmarkSubjectType,
+  BookmarkSubjectStatus,
+} from "./types/BookmarkSubject";
+import { BookmarkDocumentType } from "./types/BookmarkDocument";
+import { BookmarkUserType } from "./types/BookmarkUser";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
+import {
+  CommunitySubjectSchema,
+  CommunitySubjectType,
+} from "./types/CommunitySubject";
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
 import {
-  FileCategory,
-  FileCategorySchema,
-  FileSchema,
-  FileType,
-} from "./types/File";
+  DocumentCategory,
+  DocumentCategorySchema,
+  DocumentSchema,
+  DocumentType,
+} from "./types/Document";
 import { FilterType, FilterSchema } from "./types/Filter";
 import { ListParamsType, ListParamsSchema } from "./types/ListParams";
 import {
@@ -15,35 +25,58 @@ import {
 } from "./types/MetaPagination";
 import { PaginationSchema, PaginationType } from "./types/Pagination";
 import { PopulateType, PopulateSchema } from "./types/Populate";
+import {
+  ProfileCommunityType,
+  ProfileSchema,
+  ProfileType,
+} from "./types/ProfileType";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
+import { SubjectType, SubjectSchema } from "./types/Subject";
 import { UniversityType, UniversitySchema } from "./types/University";
+import { UserSchema, UserType } from "./types/UserType";
 
 export {
   CenterSchema,
-  CenterType,
   CommunitySchema,
-  CommunityType,
+  CommunitySubjectSchema,
   DetailParamsSchema,
-  DetailParamsType,
-  FileCategorySchema,
-  FileCategory,
-  FileSchema,
-  FileType,
+  DocumentCategorySchema,
+  DocumentSchema,
   FilterSchema,
-  FilterType,
   ListParamsSchema,
-  ListParamsType,
   MetaPaginationSchema,
-  MetaPaginationType,
   PaginationSchema,
-  PaginationType,
   PopulateSchema,
-  PopulateType,
+  ProfileSchema,
   SortSchema,
-  SortType,
   StudySchema,
-  StudyType,
+  SubjectSchema,
   UniversitySchema,
+  UserSchema,
+};
+
+export type {
+  BookmarkSubjectStatus,
+  BookmarkSubjectType,
+  BookmarkUserType,
+  BookmarkDocumentType,
+  CenterType,
+  CommunityType,
+  CommunitySubjectType,
+  DetailParamsType,
+  DocumentCategory,
+  DocumentType,
+  FilterType,
+  ListParamsType,
+  MetaPaginationType,
+  PaginationType,
+  PopulateType,
+  ProfileCommunityType,
+  ProfileType,
+  SortType,
+  StudyType,
+  SubjectType,
   UniversityType,
+  UserType,
 };
