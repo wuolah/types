@@ -4,7 +4,7 @@ export const UniversitySchema = z.object({
   id: z.number().positive(),
   slug: z.string(),
   name: z.string(),
-  shortName: z.string(),
+  shortName: z.string().optional(),
   logo: z.string().optional(),
 });
 

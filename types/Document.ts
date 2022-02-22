@@ -26,7 +26,7 @@ export const DocumentSchema = z.object({
   s3Key: z.string(),
   anonymous: z.boolean().default(false),
   user: UserSchema.optional(),
-  createdAt: z.date()
+  createdAt: z.string(),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;

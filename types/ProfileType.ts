@@ -6,7 +6,7 @@ export const ProfileSchema = z.object({
   nickname: z.string(),
   popularity: z.number().nonnegative().default(0),
   money: z.number().nonnegative().default(0),
-  createdAt: z.date(),
+  createdAt: z.string(),
 });
 
 export type ProfileType = z.infer<typeof ProfileSchema>;
@@ -16,8 +16,8 @@ export const ProfileCommunitySchema = z.object({
   communityId: z.number().positive(),
   default: z.boolean().default(false),
   role: z.number(),
-  createdAt: z.date(),
-  updatedAt: z.date(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
 
   community: CommunitySchema.optional(),
   user: ProfileSchema.optional(),
