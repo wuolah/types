@@ -1,0 +1,14 @@
+{
+  "types": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "docs", "section": "Docs" },
+    { "type": "refactor", "section": "Code refactoring" },
+    { "type": "style", "section": "Formatting changes" },
+    { "type": "chore", "section": "Chore" },
+    { "type": "perf", "hidden": true },
+    { "type": "test", "hidden": true }
+  ],
+  "commitUrlFormat": "https://github.com/wuolah/wuolah-types/commits/{{hash}}",
+  "compareUrlFormat": "https://github.com/wuolah/wuolah-types/compare/{{previousTag}}...{{currentTag}}"
+}
