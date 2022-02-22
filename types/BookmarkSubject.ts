@@ -1,6 +1,6 @@
-import { SubjectType } from "./Subject";
-import { UserType } from "./UserType";
 import { z } from "zod";
+import { SubjectType } from "./Subject";
+import { ProfileType } from "./ProfileType";
 
 export enum BookmarkSubjectStatus {
   IN_PROGRESS = "IN_PROGRESS",
@@ -11,10 +11,11 @@ export const BookmarkSubjectStatusSchema = z.nativeEnum(BookmarkSubjectStatus);
 
 export type BookmarkSubjectType = {
   id: number;
-  userId: number;
-  user?: UserType;
   status: BookmarkSubjectStatus;
+  createdAt: string;
+  userId: number;
   subjectId: number;
+
+  user?: ProfileType;
   subject?: SubjectType;
-  createdAt: Date;
 };
