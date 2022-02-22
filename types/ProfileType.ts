@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { CommunitySchema } from "..";
+import { CommunitySchema } from "./Community";
 
 export const ProfileSchema = z.object({
   id: z.number().positive(),

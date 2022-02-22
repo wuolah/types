@@ -1,6 +1,7 @@
 import {
   BookmarkSubjectType,
-  BookmarkSubjectStatus,
+  BookmarkSubjectStatusType,
+  BookmarkSubjectStatusOptions,
 } from "./types/BookmarkSubject";
 import { BookmarkDocumentType } from "./types/BookmarkDocument";
 import { BookmarkUserType } from "./types/BookmarkUser";
@@ -37,6 +38,7 @@ import { UniversityType, UniversitySchema } from "./types/University";
 import { UserSchema, UserType } from "./types/UserType";
 
 export {
+  BookmarkSubjectStatusOptions,
   CenterSchema,
   CommunitySchema,
   CommunitySubjectSchema,
@@ -57,8 +59,8 @@ export {
 };
 
 export type {
-  BookmarkSubjectStatus,
   BookmarkSubjectType,
+  BookmarkSubjectStatusType,
   BookmarkUserType,
   BookmarkDocumentType,
   CenterType,
