@@ -36,6 +36,7 @@ import { StudyType, StudySchema } from "./types/Study";
 import { SubjectType, SubjectSchema } from "./types/Subject";
 import { UniversityType, UniversitySchema } from "./types/University";
 import { UserSchema, UserType } from "./types/UserType";
+import { PaginationResponseType } from "./types/ResponseBody";
 
 export {
   BookmarkSubjectStatusOptions,
@@ -81,4 +82,5 @@ export type {
   SubjectType,
   UniversityType,
   UserType,
+  PaginationResponseType,
 };

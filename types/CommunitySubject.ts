@@ -11,8 +11,8 @@ export const CommunitySubjectSchema = z.object({
   numFiles: z.number().nonnegative().default(0),
   verified: z.boolean().default(true),
   enabled: z.boolean().default(true),
-  createdAt: z.number(),
-  updatedAt: z.number(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
 
   community: CommunitySchema.optional(),
   subject: SubjectSchema.optional(),
