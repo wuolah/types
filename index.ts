@@ -47,6 +47,7 @@ import {
   UserSchema,
   UserType,
 } from "./types/UserType";
+import { PaginationResponseType } from "./types/ResponseBody";
 
 export {
   BookmarkSubjectStatus,
@@ -100,4 +101,5 @@ export type {
   UniversityType,
   UserType,
   UserRoleType,
+  PaginationResponseType,
 };
