@@ -1,7 +1,7 @@
 import {
   BookmarkSubjectType,
   BookmarkSubjectStatusType,
-  BookmarkSubjectStatusOptions,
+  BookmarkSubjectStatus,
 } from "./types/BookmarkSubject";
 import { BookmarkDocumentType } from "./types/BookmarkDocument";
 import { BookmarkUserType } from "./types/BookmarkUser";
@@ -14,9 +14,14 @@ import {
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
 import {
   DocumentCategory,
+  DocumentCategoryType,
   DocumentCategorySchema,
   DocumentSchema,
   DocumentType,
+  DocumentFileType,
+  DocumentFileTypeType,
+  DocumentExtension,
+  DocumentExtensionType,
 } from "./types/Document";
 import { FilterType, FilterSchema } from "./types/Filter";
 import { ListParamsType, ListParamsSchema } from "./types/ListParams";
@@ -35,15 +40,24 @@ import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
 import { SubjectType, SubjectSchema } from "./types/Subject";
 import { UniversityType, UniversitySchema } from "./types/University";
-import { UserSchema, UserType } from "./types/UserType";
+import {
+  UserRole,
+  UserRoleSchema,
+  UserRoleType,
+  UserSchema,
+  UserType,
+} from "./types/UserType";
 
 export {
-  BookmarkSubjectStatusOptions,
+  BookmarkSubjectStatus,
   CenterSchema,
   CommunitySchema,
   CommunitySubjectSchema,
   DetailParamsSchema,
+  DocumentCategory,
   DocumentCategorySchema,
+  DocumentFileType,
+  DocumentExtension,
   DocumentSchema,
   FilterSchema,
   ListParamsSchema,
@@ -56,6 +70,8 @@ export {
   SubjectSchema,
   UniversitySchema,
   UserSchema,
+  UserRole,
+  UserRoleSchema,
 };
 
 export type {
@@ -67,7 +83,9 @@ export type {
   CommunityType,
   CommunitySubjectType,
   DetailParamsType,
-  DocumentCategory,
+  DocumentCategoryType,
+  DocumentFileTypeType,
+  DocumentExtensionType,
   DocumentType,
   FilterType,
   ListParamsType,
@@ -81,4 +99,5 @@ export type {
   SubjectType,
   UniversityType,
   UserType,
+  UserRoleType,
 };
