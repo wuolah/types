@@ -48,6 +48,7 @@ import {
   UserType,
 } from "./types/UserType";
 import { PaginationResponseType } from "./types/ResponseBody";
+import { SearchReponseType } from "./types/SearchResponse";
 
 export {
   BookmarkSubjectStatus,
@@ -102,4 +103,5 @@ export type {
   UserType,
   UserRoleType,
   PaginationResponseType,
+  SearchReponseType,
 };
