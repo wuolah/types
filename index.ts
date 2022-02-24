@@ -1,4 +1,8 @@
 import {
+  BookmarkCommunitySchema,
+  BookmarkCommunityType,
+} from "./types/BookmarkCommunity";
+import {
   BookmarkSubjectType,
   BookmarkSubjectStatusType,
   BookmarkSubjectStatus,
@@ -31,11 +35,7 @@ import {
 } from "./types/MetaPagination";
 import { PaginationSchema, PaginationType } from "./types/Pagination";
 import { PopulateType, PopulateSchema } from "./types/Populate";
-import {
-  ProfileCommunityType,
-  ProfileSchema,
-  ProfileType,
-} from "./types/ProfileType";
+import { ProfileSchema, ProfileType } from "./types/ProfileType";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
 import { SubjectType, SubjectSchema } from "./types/Subject";
@@ -50,6 +50,7 @@ import {
 import { PaginationResponseType } from "./types/ResponseBody";
 
 export {
+  BookmarkCommunitySchema,
   BookmarkSubjectStatus,
   CenterSchema,
   CommunitySchema,
@@ -76,6 +77,7 @@ export {
 };
 
 export type {
+  BookmarkCommunityType,
   BookmarkSubjectType,
   BookmarkSubjectStatusType,
   BookmarkUserType,
@@ -93,7 +95,6 @@ export type {
   MetaPaginationType,
   PaginationType,
   PopulateType,
-  ProfileCommunityType,
   ProfileType,
   SortType,
   StudyType,
