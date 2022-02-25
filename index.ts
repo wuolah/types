@@ -3,12 +3,13 @@ import {
   BookmarkCommunityType,
 } from "./types/BookmarkCommunity";
 import {
+  BookmarkSubjectSchema,
   BookmarkSubjectType,
   BookmarkSubjectStatusType,
   BookmarkSubjectStatus,
 } from "./types/BookmarkSubject";
-import { BookmarkDocumentType } from "./types/BookmarkDocument";
-import { BookmarkUserType } from "./types/BookmarkUser";
+import { BookmarkDocumentSchema, BookmarkDocumentType } from "./types/BookmarkDocument";
+import { BookmarkUserSchema, BookmarkUserType } from "./types/BookmarkUser";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
 import {
@@ -47,11 +48,14 @@ import {
   UserSchema,
   UserType,
 } from "./types/UserType";
-import { PaginationResponseType } from "./types/ResponseBody";
-import { SearchReponseType } from "./types/SearchResponse";
+import { PaginationResponseSchema, PaginationResponseType } from "./types/ResponseBody";
+import { SearchResponseSchema, SearchReponseType } from "./types/SearchResponse";
 
 export {
+  BookmarkDocumentSchema,
+  BookmarkUserSchema,
   BookmarkCommunitySchema,
+  BookmarkSubjectSchema,
   BookmarkSubjectStatus,
   CenterSchema,
   CommunitySchema,
@@ -75,6 +79,8 @@ export {
   UserSchema,
   UserRole,
   UserRoleSchema,
+  PaginationResponseSchema,
+  SearchResponseSchema,
 };
 
 export type {
