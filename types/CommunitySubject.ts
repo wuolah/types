@@ -4,9 +4,9 @@ import { SubjectSchema } from "./Subject";
 
 export const CommunitySubjectSchema = z.object({
   id: z.number().positive(),
-  centerId: z.number().positive(),
-  studyId: z.number().positive(),
-  subjectId: z.number().positive(),
+  centerId: z.number().nonnegative(),
+  studyId: z.number().nonnegative(),
+  subjectId: z.number().nonnegative(),
   course: z.number().positive(),
   numFiles: z.number().nonnegative().default(0),
   verified: z.boolean().default(true),

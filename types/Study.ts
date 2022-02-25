@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const StudySchema = z.object({
-  id: z.number().positive(),
+  id: z.number().nonnegative(),
   slug: z.string(),
   name: z.string(),
   shortName: z.string().optional(),

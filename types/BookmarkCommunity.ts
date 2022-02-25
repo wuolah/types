@@ -6,7 +6,7 @@ export const BookmarkCommunitySchema = z.object({
   userId: z.number().positive(),
   communityId: z.number().positive(),
   default: z.boolean().default(false),
-  role: z.number(),
+  role: z.number().positive(),
   createdAt: z.string(),
   updatedAt: z.string(),
 

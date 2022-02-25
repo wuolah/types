@@ -32,6 +32,10 @@ export const DocumentSchema = z.object({
   id: z.number().positive(),
   name: z.string(),
   userId: z.number().positive(),
+  centerId: z.number().nonnegative(),
+  studyId: z.number().nonnegative(),
+  course: z.number().positive(),
+  subjectId: z.number().nonnegative(),
   extension: DocumentExtensionSchema,
   fileType: DocumentFileTypeSchema,
   category: DocumentCategorySchema,
@@ -41,8 +45,9 @@ export const DocumentSchema = z.object({
   numBookmarks: z.number().nonnegative().default(0),
   s3Key: z.string(),
   anonymous: z.boolean().default(false),
-  user: UserSchema.optional(),
   createdAt: z.string(),
+
+  user: UserSchema.optional(),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;
