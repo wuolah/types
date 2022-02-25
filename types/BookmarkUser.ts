@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ProfileSchema } from "./ProfileType";
+import { ProfileSchema } from "./Profile";
 
 
 export const BookmarkUserSchema = z.object({

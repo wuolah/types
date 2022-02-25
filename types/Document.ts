@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { UserSchema } from "./UserType";
+import { UserSchema } from "./User";
 
 export const DocumentCategory = {
   APUNTES: "apuntes",
@@ -43,9 +43,11 @@ export const DocumentSchema = z.object({
   numViews: z.number().nonnegative().default(0),
   numDownloads: z.number().nonnegative().default(0),
   numBookmarks: z.number().nonnegative().default(0),
+  numLikes: z.number().nonnegative().default(0),
   s3Key: z.string(),
   anonymous: z.boolean().default(false),
   createdAt: z.string(),
+  deleted: z.boolean().default(false),
 
   user: UserSchema.optional(),
 });

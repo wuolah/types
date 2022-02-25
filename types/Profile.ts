@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { BookmarkCommunitySchema } from "./BookmarkCommunity";
 
 export const ProfileSchema = z.object({
   id: z.number().positive(),
@@ -6,6 +7,8 @@ export const ProfileSchema = z.object({
   popularity: z.number().nonnegative().default(0),
   money: z.number().nonnegative().default(0),
   createdAt: z.string(),
+
+  bookmarkedCommunities: z.array(BookmarkCommunitySchema).optional(),
 });
 
 export type ProfileType = z.infer<typeof ProfileSchema>;

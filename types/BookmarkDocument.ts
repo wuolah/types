@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { DocumentSchema } from "./Document";
-import { ProfileSchema } from "./ProfileType";
+import { ProfileSchema } from "./Profile";
 
 export const BookmarkDocumentSchema = z.object({
   id: z.number().nonnegative(),

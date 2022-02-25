@@ -1,8 +1,10 @@
 import { z } from "zod";
-import { ProfileSchema } from "./ProfileType";
+import { ProfileSchema } from "./Profile";
 import { CommunitySchema } from "./Community";
+import { BookmarkSubjectSchema } from "./BookmarkSubject";
 
 export const BookmarkCommunitySchema = z.object({
+  id: z.number().positive(),
   userId: z.number().positive(),
   communityId: z.number().positive(),
   default: z.boolean().default(false),
@@ -10,8 +12,9 @@ export const BookmarkCommunitySchema = z.object({
   createdAt: z.string(),
   updatedAt: z.string(),
 
-  community: CommunitySchema.optional(),
   user: ProfileSchema.optional(),
+  community: CommunitySchema.optional(),
+  bookmarkedSubjects: z.array(BookmarkSubjectSchema).optional(),
 });
 
 export type BookmarkCommunityType = z.infer<typeof BookmarkCommunitySchema>;

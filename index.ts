@@ -36,7 +36,7 @@ import {
 } from "./types/MetaPagination";
 import { PaginationSchema, PaginationType } from "./types/Pagination";
 import { PopulateType, PopulateSchema } from "./types/Populate";
-import { ProfileSchema, ProfileType } from "./types/ProfileType";
+import { ProfileSchema, ProfileType } from "./types/Profile";
 import { SortType, SortSchema } from "./types/Sort";
 import { StudyType, StudySchema } from "./types/Study";
 import { SubjectType, SubjectSchema } from "./types/Subject";
@@ -47,9 +47,9 @@ import {
   UserRoleType,
   UserSchema,
   UserType,
-} from "./types/UserType";
-import { PaginationResponseSchema, PaginationResponseType } from "./types/ResponseBody";
-import { SearchResponseSchema, SearchReponseType } from "./types/SearchResponse";
+} from "./types/User";
+import { PaginationResponseType } from "./types/ResponseBody";
+import { SearchReponseType } from "./types/SearchResponse";
 
 export {
   BookmarkDocumentSchema,
