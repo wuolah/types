@@ -1,8 +1,9 @@
 {
-  "name": "wuolah-types",
+  "name": "@wuolah/wuolah-types",
   "version": "0.0.3",
   "main": "index.ts",
   "license": "MIT",
+  "repository": "git://github.com/wuolah/wuolah-types.git",
   "scripts": {
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
