@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/wuolah/wuolah-types/compare/v0.0.3...v0.0.4) (2022-03-04)
+
+
+### Features
+
+* added filter slugs ([5c86529](https://github.com/wuolah/wuolah-types/commits/5c86529a66c873e8001ff529cfbcd91ce64dcd84))
+
 ### [0.0.3](https://github.com/wuolah/wuolah-types/compare/v0.0.2...v0.0.3) (2022-03-04)
 
 
