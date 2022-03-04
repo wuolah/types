@@ -1,10 +1,14 @@
-import { ProfileType } from "./ProfileType";
-import { UserType } from "./UserType";
+import { z } from "zod";
+import { ProfileSchema } from "./Profile";
 
-export type BookmarkUserType = {
-  id: number;
-  userId: number;
-  user?: UserType;
-  profileId: number;
-  profile?: ProfileType;
-};
+
+export const BookmarkUserSchema = z.object({
+  id: z.number().nonnegative(),
+  userId: z.number().nonnegative(),
+  profileId: z.number().nonnegative(),
+
+  user: ProfileSchema.optional(),
+  profile: ProfileSchema.optional(),
+})
+
+export type BookmarkUserType = z.infer<typeof BookmarkUserSchema>;

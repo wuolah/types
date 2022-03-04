@@ -1,20 +1,29 @@
-import { SubjectType } from "./Subject";
-import { UserType } from "./UserType";
 import { z } from "zod";
+import { SubjectSchema } from "./Subject";
+import { ProfileSchema } from "./Profile";
 
-export enum BookmarkSubjectStatus {
-  IN_PROGRESS = "IN_PROGRESS",
-  PASSED = "PASSED",
-}
+export const BookmarkSubjectStatus = {
+  IN_PROGRESS: "IN_PROGRESS",
+  PASSED: "PASSED",
+} as const;
 
 export const BookmarkSubjectStatusSchema = z.nativeEnum(BookmarkSubjectStatus);
 
-export type BookmarkSubjectType = {
-  id: number;
-  userId: number;
-  user?: UserType;
-  status: BookmarkSubjectStatus;
-  subjectId: number;
-  subject?: SubjectType;
-  createdAt: Date;
-};
+export type BookmarkSubjectStatusType = z.infer<
+  typeof BookmarkSubjectStatusSchema
+>;
+
+export const BookmarkSubjectSchema = z.object({
+  id: z.number().positive(),
+  userId: z.number().positive(),
+  communityId: z.number().positive(),
+  subjectId: z.number().nonnegative(),
+  status: BookmarkSubjectStatusSchema,
+  createdAt: z.string(),
+  updatedAt: z.string(),
+
+  user: ProfileSchema.optional(),
+  subject: SubjectSchema.optional(),
+});
+
+export type BookmarkSubjectType = z.infer<typeof BookmarkSubjectSchema>;

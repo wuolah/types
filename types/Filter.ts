@@ -23,50 +23,48 @@ const stringToBoolean = (defaultValue: boolean | null) => (val: unknown) =>
 export const FilterSchema = z
   .object({
     text: z.string().optional(),
-    userId: z.union([
-      z.array(
-        z.preprocess(stringToNumber(null), z.number().positive())
-      ),
-      z.preprocess(stringToNumber(null), z.number().positive())
-      ]).optional()
-    ,
+    userId: z
+      .union([
+        z.array(z.preprocess(stringToNumber(null), z.number().positive())),
+        z.preprocess(stringToNumber(null), z.number().positive()),
+      ])
+      .optional(),
     universityId: z
-      .preprocess(stringToNumber(null), z.number().positive())
+      .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
     centerId: z
-      .preprocess(stringToNumber(null), z.number().positive())
+      .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
     studyId: z
-      .preprocess(stringToNumber(null), z.number().positive())
+      .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
     cityId: z
-      .preprocess(stringToNumber(null), z.number().positive())
+      .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
     countryId: z
-      .preprocess(stringToNumber(null), z.number().positive())
+      .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
     communityId: z
-      .preprocess(stringToNumber(null), z.number().positive())
+      .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
     subjectId: z
-      .preprocess(stringToNumber(null), z.number().positive())
+      .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
     profileId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
-    category: z.union([
-      z.array(DocumentCategorySchema),
-      DocumentCategorySchema.optional()
-      ]).optional(),
+    category: z
+      .union([
+        z.array(DocumentCategorySchema),
+        DocumentCategorySchema.optional(),
+      ])
+      .optional(),
 
     status: BookmarkSubjectStatusSchema.optional(),
-    username: z.union([
-      z.array(z.string()),
-      z.string()
-    ]).optional(),
+    username: z.union([z.array(z.string()), z.string()]).optional(),
 
     verified: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())

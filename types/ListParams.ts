@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { PaginationSchema } from "..";
+import { PaginationSchema } from "./Pagination";
 import { FilterSchema } from "./Filter";
 import { PopulateSchema } from "./Populate";
 import { SortSchema } from "./Sort";
