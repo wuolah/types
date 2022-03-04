@@ -47,12 +47,14 @@ export const FilterSchema = z
     communityId: z
       .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
+    communitySlug: z.string().optional(),
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
     subjectId: z
       .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
+    subjectSlug: z.string().optional(),
     profileId: z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
