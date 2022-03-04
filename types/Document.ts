@@ -44,6 +44,7 @@ export const DocumentSchema = z.object({
   numDownloads: z.number().nonnegative().default(0),
   numBookmarks: z.number().nonnegative().default(0),
   numLikes: z.number().nonnegative().default(0),
+  numPages: z.number().nonnegative().default(0),
   s3Key: z.string(),
   anonymous: z.boolean().default(false),
   createdAt: z.string(),

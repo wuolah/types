@@ -8,7 +8,10 @@ import {
   BookmarkSubjectStatusType,
   BookmarkSubjectStatus,
 } from "./types/BookmarkSubject";
-import { BookmarkDocumentSchema, BookmarkDocumentType } from "./types/BookmarkDocument";
+import {
+  BookmarkDocumentSchema,
+  BookmarkDocumentType,
+} from "./types/BookmarkDocument";
 import { BookmarkUserSchema, BookmarkUserType } from "./types/BookmarkUser";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
@@ -48,7 +51,10 @@ import {
   UserSchema,
   UserType,
 } from "./types/User";
-import { PaginationResponseType } from "./types/ResponseBody";
+import {
+  PaginationResponseSchema,
+  PaginationResponseType,
+} from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
 
 export {
@@ -80,7 +86,6 @@ export {
   UserRole,
   UserRoleSchema,
   PaginationResponseSchema,
-  SearchResponseSchema,
 };
 
 export type {
