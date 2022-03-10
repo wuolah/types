@@ -1,15 +1,16 @@
 import { z } from "zod";
-import { BookmarkCommunitySchema } from "./BookmarkCommunity";
+import { stringToBoolean } from "./utils";
 
 export const ProfileSchema = z.object({
   id: z.number().positive(),
   nickname: z.string(),
   popularity: z.number().nonnegative().default(0),
-  money: z.number().nonnegative().default(0),
+  money: z.number().nonnegative().default(0).nullable(),
   createdAt: z.string(),
-  deleted: z.boolean().default(false),
-
-  bookmarkedCommunities: z.array(BookmarkCommunitySchema).optional(),
+  updatedAt: z.string().optional(),
+  deleted: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
 });
 
 export type ProfileType = z.infer<typeof ProfileSchema>;

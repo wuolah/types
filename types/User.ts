@@ -11,7 +11,7 @@ export type UserRoleType = z.infer<typeof UserRoleSchema>;
 export const UserSchema = ProfileSchema.extend({
   role: UserRoleSchema,
   email: z.string(),
-  password: z.string(),
+  password: z.string().optional(),
 });
 
 export type UserType = z.infer<typeof UserSchema>;

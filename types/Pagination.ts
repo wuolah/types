@@ -1,9 +1,5 @@
 import { z } from "zod";
-
-const stringToNumber = (defaultValue: number) => (val: unknown) =>
-  parseInt(String(val), 10) || defaultValue;
-const stringToBoolean = (defaultValue: boolean) => (val: unknown) =>
-  val != undefined ? val === "true" : defaultValue;
+import { stringToBoolean, stringToNumber } from "./utils";
 
 export const PaginationSchema = z
   .object({

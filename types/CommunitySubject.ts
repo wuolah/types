@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { CommunitySchema } from "./Community";
 import { SubjectSchema } from "./Subject";
+import { stringToBoolean } from "./utils";
 
 export const CommunitySubjectSchema = z.object({
   id: z.number().positive(),
@@ -8,9 +9,13 @@ export const CommunitySubjectSchema = z.object({
   studyId: z.number().nonnegative(),
   subjectId: z.number().nonnegative(),
   course: z.number().positive(),
-  numFiles: z.number().nonnegative().default(0),
-  verified: z.boolean().default(true),
-  enabled: z.boolean().default(true),
+  numFiles: z.number().nonnegative().default(0).optional(),
+  verified: z
+    .preprocess(stringToBoolean(null), z.boolean().nullable())
+    .optional(),
+  enabled: z
+    .preprocess(stringToBoolean(null), z.boolean().nullable())
+    .optional(),
   createdAt: z.string(),
   updatedAt: z.string(),
 
