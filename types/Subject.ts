@@ -6,7 +6,7 @@ export const SubjectSchema = z.object({
   slug: z.string(),
   name: z.string(),
   shortName: z.string().nullable().optional(),
-  course: z.number().positive().optional(),
+  course: z.number().nonnegative().optional(),
   numFiles: z.number().nonnegative().default(0).optional(),
   verified: z
     .preprocess(stringToBoolean(true), z.boolean().nullable())
