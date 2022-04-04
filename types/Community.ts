@@ -10,17 +10,15 @@ export const CommunitySchema = z.object({
   shortName: z.string().optional(),
   logoUrl: z.string().optional(),
   backgroundUrl: z.string().optional(),
-  universityId: z.number().nonnegative(),
-  centerId: z.number().nonnegative(),
-  studyId: z.number().nonnegative(),
+  metadata: z.array(z.object({
+    type: z.string(),
+    value: z.union([z.string(), z.number().nonnegative()]),
+    object: z.union([UniversitySchema, CenterSchema, StudySchema]).optional(),
+  })),
   numUsers: z.number().nonnegative().default(0),
   createdAt: z.string(),
   updatedAt: z.string(),
-
-  university: UniversitySchema.optional(),
-  center: CenterSchema.optional(),
-  study: StudySchema.optional(),
-
+  templateId: z.number().nonnegative(),
   // admins?: User[];
   // collaborators?: User[];
 });
