@@ -10,11 +10,13 @@ export const CommunitySchema = z.object({
   shortName: z.string().optional(),
   logoUrl: z.string().optional(),
   backgroundUrl: z.string().optional(),
-  metadata: z.array(z.object({
-    type: z.string(),
-    value: z.union([z.string(), z.number().nonnegative()]),
-    object: z.union([UniversitySchema, CenterSchema, StudySchema]).optional(),
-  })),
+  metadata: z.array(
+    z.object({
+      type: z.string(),
+      value: z.union([z.string(), z.number().nonnegative()]),
+      object: z.union([UniversitySchema, CenterSchema, StudySchema]).optional(),
+    })
+  ),
   numUsers: z.number().nonnegative().default(0),
   createdAt: z.string(),
   updatedAt: z.string(),
