@@ -11,6 +11,9 @@ export const SubjectSchema = z.object({
   verified: z
     .preprocess(stringToBoolean(true), z.boolean().nullable())
     .optional(),
+  enabled: z
+    .preprocess(stringToBoolean(true), z.boolean().nullable())
+    .optional(),
 });
 
 export type SubjectType = z.infer<typeof SubjectSchema>;
