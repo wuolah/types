@@ -10,7 +10,7 @@ export const MetaPaginationSchema = z.object({
     .preprocess(stringToNumber(10), z.number().positive().default(10))
     .optional(),
   total: z
-    .preprocess(stringToNumber(0), z.number().positive().default(0))
+    .preprocess(stringToNumber(0), z.number().nonnegative().default(0))
     .optional(),
 });
 
