@@ -1,6 +1,6 @@
 {
-  "name": "@wuolah/wuolah-types",
-  "version": "0.0.4",
+  "name": "@wuolah/types",
+  "version": "0.1.0",
   "description": "This library includes the [zod](https://www.npmjs.com/package/zod) schemas and its corresponding TypeScript definitions required by the Wuolah ecosystem.",
   "main": "index.ts",
   "dependencies": {
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wuolah/wuolah-types.git"
+    "url": "git+https://github.com/wuolah/types.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wuolah/wuolah-types/issues"
+    "url": "https://github.com/wuolah/types/issues"
   },
-  "homepage": "https://github.com/wuolah/wuolah-types#readme"
+  "homepage": "https://github.com/wuolah/types#readme"
 }

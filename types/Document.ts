@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { UserSchema } from "./User";
+import { ProfileSchema } from "./Profile";
+import { stringToBoolean } from "./utils";
 
 export const DocumentCategory = {
   APUNTES: "apuntes",
@@ -31,26 +32,30 @@ export type DocumentExtensionType = z.infer<typeof DocumentExtensionSchema>;
 export const DocumentSchema = z.object({
   id: z.number().positive(),
   name: z.string(),
-  userId: z.number().positive(),
+  userId: z.number().positive().nullable().optional(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
   course: z.number().positive(),
   subjectId: z.number().nonnegative(),
-  extension: DocumentExtensionSchema,
-  fileType: DocumentFileTypeSchema,
-  category: DocumentCategorySchema,
+  extension: z.union([DocumentExtensionSchema, z.string()]),
+  fileType: z.union([DocumentFileTypeSchema, z.string()]),
+  category: z.union([DocumentCategorySchema, z.string()]),
   numPreviews: z.number().nonnegative().default(0),
   numViews: z.number().nonnegative().default(0),
   numDownloads: z.number().nonnegative().default(0),
   numBookmarks: z.number().nonnegative().default(0),
   numLikes: z.number().nonnegative().default(0),
   numPages: z.number().nonnegative().default(0),
-  s3Key: z.string(),
-  anonymous: z.boolean().default(false),
+  s3Key: z.string().optional(),
+  anonymous: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
   createdAt: z.string(),
-  deleted: z.boolean().default(false),
+  deleted: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
 
-  user: UserSchema.optional(),
+  user: ProfileSchema.optional(),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;

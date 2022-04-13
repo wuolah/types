@@ -20,7 +20,6 @@ export const BookmarkSubjectSchema = z.object({
   subjectId: z.number().nonnegative(),
   status: BookmarkSubjectStatusSchema,
   createdAt: z.string(),
-  updatedAt: z.string(),
 
   user: ProfileSchema.optional(),
   subject: SubjectSchema.optional(),

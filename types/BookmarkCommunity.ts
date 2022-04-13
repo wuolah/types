@@ -2,13 +2,15 @@ import { z } from "zod";
 import { ProfileSchema } from "./Profile";
 import { CommunitySchema } from "./Community";
 import { BookmarkSubjectSchema } from "./BookmarkSubject";
+import { stringToBoolean } from "./utils";
 
 export const BookmarkCommunitySchema = z.object({
-  id: z.number().positive(),
   userId: z.number().positive(),
   communityId: z.number().positive(),
-  default: z.boolean().default(false),
-  role: z.number().positive(),
+  default: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
+  role: z.number().positive().default(1),
   createdAt: z.string(),
   updatedAt: z.string(),
 

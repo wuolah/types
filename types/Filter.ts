@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { BookmarkSubjectStatusSchema } from "./BookmarkSubject";
 import { DocumentCategorySchema } from "./Document";
+import { stringToBoolean, stringToNumber } from "./utils";
 
 /**
  * TODO - ESTO ES UN EJEMPLO
@@ -9,20 +10,9 @@ import { DocumentCategorySchema } from "./Document";
  * para testear el funcionamiento.
  */
 
-const stringToNumber = (defaultValue: number | null) => (val: unknown) =>
-  parseInt(String(val), 10) || defaultValue;
-const stringToBoolean = (defaultValue: boolean | null) => (val: unknown) =>
-  val != undefined
-    ? String(val) === "true"
-      ? true
-      : String(val) === "false"
-      ? false
-      : defaultValue
-    : defaultValue;
-
 export const FilterSchema = z
   .object({
-    text: z.string().optional(),
+    search: z.string().optional(),
     userId: z
       .union([
         z.array(z.preprocess(stringToNumber(null), z.number().positive())),
@@ -69,6 +59,9 @@ export const FilterSchema = z
     username: z.union([z.array(z.string()), z.string()]).optional(),
 
     verified: z
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
+      .optional(),
+    enabled: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
     visible: z
