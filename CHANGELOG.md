@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/wuolah/types/compare/v0.1.2...v0.1.3) (2022-04-18)
+
+
+### Code refactoring
+
+* added compilation config ([8f829b2](https://github.com/wuolah/types/commits/8f829b26828fe2a4740bb6ccd9d44bc773ef2ef2))
+
 ### [0.1.2](https://github.com/wuolah/types/compare/v0.1.1...v0.1.2) (2022-04-18)
 
 
