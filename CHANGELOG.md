@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/wuolah/types/compare/v0.1.0...v0.1.1) (2022-04-18)
+
+
+### Features
+
+* added new field filter.active ([9c249cc](https://github.com/wuolah/types/commits/9c249cc82857e85ef2f102f5280e4bd119c138b3))
+
 ## [0.1.0](https://github.com/wuolah/types/compare/v0.0.4...v0.1.0) (2022-04-13)
 
 
