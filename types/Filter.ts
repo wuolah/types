@@ -70,6 +70,9 @@ export const FilterSchema = z
     visible: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
+    active: z
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
+      .optional(),
   })
   .optional();
 
