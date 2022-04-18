@@ -3,7 +3,6 @@
   "version": "0.1.2",
   "description": "This library includes the [zod](https://www.npmjs.com/package/zod) schemas and its corresponding TypeScript definitions required by the Wuolah ecosystem.",
   "main": "index.ts",
-  "type": "module",
   "dependencies": {
     "zod": "^3.11.6"
   },
@@ -12,6 +11,7 @@
     "typescript": "^4.5.5"
   },
   "scripts": {
+    "build": "tsc",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
@@ -26,6 +26,7 @@
     "access": "public",
     "registry": "https://npm.pkg.github.com"
   },
+  "files": ["lib/**/*"],
   "author": "",
   "license": "ISC",
   "bugs": {
