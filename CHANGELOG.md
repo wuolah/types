@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/wuolah/types/compare/v0.1.1...v0.1.2) (2022-04-18)
+
+
+### Bug Fixes
+
+* added type module to package.json ([73f83ff](https://github.com/wuolah/types/commits/73f83ff382340eb0eb75648211f1de2788841d0f))
+
 ### [0.1.1](https://github.com/wuolah/types/compare/v0.1.0...v0.1.1) (2022-04-18)
 
 
