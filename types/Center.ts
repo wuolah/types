@@ -6,7 +6,6 @@ export const CenterSchema = z.object({
   name: z.string(),
   shortName: z.string().nullable().optional(),
   logoUrl: z.string().nullable().optional(),
-  link: z.string().nullable().optional(),
 });
 
 export type CenterType = z.infer<typeof CenterSchema>;

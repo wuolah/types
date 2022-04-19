@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/wuolah/types/compare/v0.1.6...v0.1.7) (2022-04-19)
+
+
+### Features
+
+* added deprecation information ([521a397](https://github.com/wuolah/types/commits/521a397f96923dc73eb7a8c71331eea2af066631))
+* removed deprecated fields ([339f807](https://github.com/wuolah/types/commits/339f807820e4f14d3a708f791e001bec0b98acdb))
+
 ### [0.1.6](https://github.com/wuolah/types/compare/v0.1.5...v0.1.6) (2022-04-18)
 
 ### [0.1.5](https://github.com/wuolah/types/compare/v0.1.4...v0.1.5) (2022-04-18)
