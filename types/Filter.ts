@@ -64,6 +64,9 @@ export const FilterSchema = z
     enabled: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
+    active: z
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
+      .optional(),
     visible: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
