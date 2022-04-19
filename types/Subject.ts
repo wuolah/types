@@ -8,13 +8,16 @@ export const SubjectSchema = z.object({
   shortName: z.string().nullable().optional(),
   course: z.number().nonnegative().optional(),
   numFiles: z.number().nonnegative().default(0).optional(),
-  deprecatedLink: z.string().nullable().optional(),
   verified: z
     .preprocess(stringToBoolean(true), z.boolean().nullable())
     .optional(),
   enabled: z
     .preprocess(stringToBoolean(true), z.boolean().nullable())
     .optional(),
+  /**
+   * @deprecated This field is deprecated and will be removed in the future.
+   */
+  DEPR_link: z.string().nullable().optional(),
 });
 
 export type SubjectType = z.infer<typeof SubjectSchema>;
