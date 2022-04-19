@@ -14,10 +14,6 @@ export const SubjectSchema = z.object({
   enabled: z
     .preprocess(stringToBoolean(true), z.boolean().nullable())
     .optional(),
-  /**
-   * @deprecated This field is deprecated and will be removed in the future.
-   */
-  DEPR_link: z.string().nullable().optional(),
 });
 
 export type SubjectType = z.infer<typeof SubjectSchema>;
