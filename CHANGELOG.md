@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/wuolah/types/compare/v0.1.3...v0.1.4) (2022-04-18)
+
+
+### Bug Fixes
+
+* fixed package main property ([254fb49](https://github.com/wuolah/types/commits/254fb493a5fd68e689081a4611e5a705e7c88faa))
+
 ### [0.1.3](https://github.com/wuolah/types/compare/v0.1.2...v0.1.3) (2022-04-18)
 
 
