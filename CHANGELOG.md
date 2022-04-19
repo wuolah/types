@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/wuolah/types/compare/v0.1.4...v0.1.5) (2022-04-18)
+
+
+### Features
+
+* added new field active to BookmarkSubject ([32fe21f](https://github.com/wuolah/types/commits/32fe21fc9ddaaf69608e694fe987979499373f8b))
+
 ### [0.1.4](https://github.com/wuolah/types/compare/v0.1.3...v0.1.4) (2022-04-18)
 
 
