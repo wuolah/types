@@ -12,6 +12,7 @@ export const UserSchema = ProfileSchema.extend({
   role: UserRoleSchema,
   email: z.string(),
   password: z.string().optional(),
+  captchaCounter: z.number().nonnegative().default(0),
 });
 
 export type UserType = z.infer<typeof UserSchema>;
