@@ -43,11 +43,15 @@ export const DocumentSchema = z.object({
   numPreviews: z.number().nonnegative().default(0),
   numViews: z.number().nonnegative().default(0),
   numDownloads: z.number().nonnegative().default(0),
+  numPremiumDownloads: z.number().nonnegative().default(0),
   numBookmarks: z.number().nonnegative().default(0),
   numLikes: z.number().nonnegative().default(0),
   numPages: z.number().nonnegative().default(0),
   s3Key: z.string().optional(),
   isAnonymous: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
+  isMonetizable: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
   createdAt: z.string(),
