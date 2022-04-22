@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/wuolah/types/compare/v0.1.7...v0.1.8) (2022-04-22)
+
+
+### Features
+
+* added document.numPremiumDownloads and document.isMonetizable ([662636e](https://github.com/wuolah/types/commits/662636ee9ee8cb3821267e9d8bb766e878ee6c24))
+* added user.captchaCounter ([974295c](https://github.com/wuolah/types/commits/974295c0db24a825684d6096068afd0d1f355d49))
+* added user.coins ([da14e97](https://github.com/wuolah/types/commits/da14e9717d5eb1e4f9adbe6e6bba138b797adde6))
+* renamed document.anonymous to document.isAnonymous ([051c164](https://github.com/wuolah/types/commits/051c1645c1b25fc6569a7f9b9839912ee0ba8efa))
+
 ### [0.1.7](https://github.com/wuolah/types/compare/v0.1.6...v0.1.7) (2022-04-19)
 
 
