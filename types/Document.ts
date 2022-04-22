@@ -47,7 +47,7 @@ export const DocumentSchema = z.object({
   numLikes: z.number().nonnegative().default(0),
   numPages: z.number().nonnegative().default(0),
   s3Key: z.string().optional(),
-  anonymous: z
+  isAnonymous: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
   createdAt: z.string(),
@@ -55,6 +55,7 @@ export const DocumentSchema = z.object({
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
 
+  // virtuals
   user: ProfileSchema.optional(),
 });
 
