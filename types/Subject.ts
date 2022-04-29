@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { CommunitySubjectSchema } from "./CommunitySubject";
 import { stringToBoolean } from "./utils";
 
 export const SubjectSchema = z.object({
@@ -6,14 +7,15 @@ export const SubjectSchema = z.object({
   slug: z.string(),
   name: z.string(),
   shortName: z.string().nullable().optional(),
-  course: z.number().nonnegative().optional(),
-  numFiles: z.number().nonnegative().default(0).optional(),
   verified: z
     .preprocess(stringToBoolean(true), z.boolean().nullable())
     .optional(),
   enabled: z
     .preprocess(stringToBoolean(true), z.boolean().nullable())
     .optional(),
+  relation: CommunitySubjectSchema.optional(),
 });
+
+
 
 export type SubjectType = z.infer<typeof SubjectSchema>;
