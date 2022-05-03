@@ -33,6 +33,7 @@ export const DocumentSchema = z.object({
   id: z.number().positive(),
   name: z.string(),
   userId: z.number().positive().nullable().optional(),
+  uploadId: z.number().nonnegative().optional(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
   course: z.number().positive(),
