@@ -26,10 +26,6 @@ import {
   DocumentCategorySchema,
   DocumentSchema,
   DocumentType,
-  DocumentFileType,
-  DocumentFileTypeType,
-  DocumentExtension,
-  DocumentExtensionType,
 } from "./types/Document";
 import { FilterType, FilterSchema } from "./types/Filter";
 import { ListParamsType, ListParamsSchema } from "./types/ListParams";
@@ -69,8 +65,6 @@ export {
   DetailParamsSchema,
   DocumentCategory,
   DocumentCategorySchema,
-  DocumentFileType,
-  DocumentExtension,
   DocumentSchema,
   FilterSchema,
   ListParamsSchema,
@@ -99,8 +93,6 @@ export type {
   CommunitySubjectType,
   DetailParamsType,
   DocumentCategoryType,
-  DocumentFileTypeType,
-  DocumentExtensionType,
   DocumentType,
   FilterType,
   ListParamsType,
