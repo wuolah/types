@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/wuolah/types/compare/v0.1.8...v0.1.9) (2022-05-03)
+
+
+### Features
+
+* added center.universityId ([54c9e2c](https://github.com/wuolah/types/commits/54c9e2c02cd12d2ba7712905654e35aa8bbdd8f6))
+* added field document.uploadId ([49e66a2](https://github.com/wuolah/types/commits/49e66a2ac9d09369c279948b921301bd0e577fa3))
+* added field user.stripeId ([cfa795b](https://github.com/wuolah/types/commits/cfa795bdc7b7b85c642fdaffffa425ae6746e2f1))
+* added user.lastConnection field ([79bb9a5](https://github.com/wuolah/types/commits/79bb9a5956e819bf29f7180ba0774a182aee7b04))
+* **Document:** Extension and FileType now are string ([f59ea10](https://github.com/wuolah/types/commits/f59ea10375da717f2f210c7499203a07a07a9ae3))
+
 ### [0.1.8](https://github.com/wuolah/types/compare/v0.1.7...v0.1.8) (2022-04-22)
 
 
