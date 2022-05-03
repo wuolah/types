@@ -8,7 +8,7 @@ export const CommunitySubjectSchema = z.object({
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
   subjectId: z.number().nonnegative(),
-  course: z.number().positive(),
+  course: z.number().nonnegative(),
   numFiles: z.number().nonnegative().default(0).optional(),
   verified: z
     .preprocess(stringToBoolean(null), z.boolean().nullable())
