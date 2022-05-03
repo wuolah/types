@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { SubjectSchema } from "./Subject";
 import { ProfileSchema } from "./Profile";
+import { CommunitySubjectSchema } from "./CommunitySubject";
 
 export const BookmarkSubjectStatus = {
   IN_PROGRESS: "IN_PROGRESS",
@@ -17,13 +17,13 @@ export const BookmarkSubjectSchema = z.object({
   id: z.number().positive(),
   userId: z.number().positive(),
   communityId: z.number().positive(),
-  subjectId: z.number().nonnegative(),
+  communitySubjectId: z.number().nonnegative(),
   status: BookmarkSubjectStatusSchema,
   createdAt: z.string(),
   active: z.boolean(),
   
   user: ProfileSchema.optional(),
-  subject: SubjectSchema.optional(),
+  communitySubject: CommunitySubjectSchema.optional(),
 });
 
 export type BookmarkSubjectType = z.infer<typeof BookmarkSubjectSchema>;
