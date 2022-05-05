@@ -16,12 +16,11 @@ export type BookmarkSubjectStatusType = z.infer<
 export const BookmarkSubjectSchema = z.object({
   id: z.number().positive(),
   userId: z.number().positive(),
-  communityId: z.number().positive(),
   communitySubjectId: z.number().nonnegative(),
   status: BookmarkSubjectStatusSchema,
   createdAt: z.string(),
   active: z.boolean(),
-  
+
   user: ProfileSchema.optional(),
   communitySubject: CommunitySubjectSchema.optional(),
 });
