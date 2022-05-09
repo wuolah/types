@@ -3,10 +3,10 @@ import { UniversitySchema } from "./University";
 
 export const CenterSchema = z.object({
   id: z.number().nonnegative(),
-  slug: z.string(),
+  slug: z.string().optional().nullable(),
   name: z.string(),
   shortName: z.string().nullable().optional(),
-  universityId: z.number().nonnegative(),
+  universityId: z.number().nonnegative().optional(),
   logoUrl: z.string().nullable().optional(),
 
   // virtuals

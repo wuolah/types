@@ -5,7 +5,7 @@ import { stringToBoolean } from "./utils";
 
 export const CommunitySubjectSchema = z.object({
   id: z.number().positive(),
-  communityId: z.number().nonnegative(),
+  communityId: z.number().nonnegative().optional(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
   subjectId: z.number().nonnegative(),

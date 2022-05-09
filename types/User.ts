@@ -4,6 +4,7 @@ import { ProfileSchema } from "./Profile";
 export const UserRole = {
   USER: 1,
   ADMIN: 2,
+  COLLABORATOR: 3,
 } as const;
 export const UserRoleSchema = z.nativeEnum(UserRole);
 export type UserRoleType = z.infer<typeof UserRoleSchema>;
