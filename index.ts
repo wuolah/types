@@ -52,6 +52,13 @@ import {
   PaginationResponseType,
 } from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
+import {
+  MetaFilterSchema,
+  MetaFilterType,
+  RankingCategorySchema,
+  RankingCategoryType,
+} from "./types/MetaFilter";
+import { RankingSchema, RankingType } from "./types/Ranking";
 
 export {
   BookmarkDocumentSchema,
@@ -80,6 +87,9 @@ export {
   UserRole,
   UserRoleSchema,
   PaginationResponseSchema,
+  RankingSchema,
+  MetaFilterSchema,
+  RankingCategorySchema,
 };
 
 export type {
@@ -108,4 +118,7 @@ export type {
   UserRoleType,
   PaginationResponseType,
   SearchReponseType,
+  RankingType,
+  MetaFilterType,
+  RankingCategoryType,
 };
