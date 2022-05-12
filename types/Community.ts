@@ -7,7 +7,7 @@ export const CommunitySchema = z.object({
   id: z.number().positive(),
   slug: z.string().optional().nullable(),
   name: z.string(),
-  shortName: z.string().optional(),
+  shortName: z.string().nullable().optional(),
   logoUrl: z.string().optional().nullable(),
   backgroundUrl: z.string().optional().nullable(),
   universityId: z.number().nonnegative().optional(),

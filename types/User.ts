@@ -17,6 +17,12 @@ export const UserSchema = ProfileSchema.extend({
   captchaCounter: z.number().nonnegative().default(0),
   lastConnection: z.string(),
   stripeId: z.string().optional(),
+  countryId: z.number().nonnegative().optional(),
+  gender: z.number().max(4).nonnegative().nullable().optional(),
+  birthday: z.string().nullable().optional(),
+  money: z.number().nonnegative().nullable().optional(),
+  accumulated: z.number().nonnegative().nullable().optional(),
+  displayMoney: z.boolean(),
 });
 
 export type UserType = z.infer<typeof UserSchema>;
