@@ -52,13 +52,14 @@ import {
   PaginationResponseType,
 } from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
+import { MetaFilterSchema, MetaFilterType } from "./types/MetaFilter";
 import {
-  MetaFilterSchema,
-  MetaFilterType,
+  RankingCategory,
+  RankingSchema,
+  RankingType,
   RankingCategorySchema,
   RankingCategoryType,
-} from "./types/MetaFilter";
-import { RankingSchema, RankingType } from "./types/Ranking";
+} from "./types/Ranking";
 
 export {
   BookmarkDocumentSchema,
@@ -90,6 +91,7 @@ export {
   RankingSchema,
   MetaFilterSchema,
   RankingCategorySchema,
+  RankingCategory,
 };
 
 export type {

@@ -1,12 +1,5 @@
 import { z } from "zod";
-
-export const RankingCategory = {
-  DOWNLOADS: "downloads",
-  POPULARITY: "popularity",
-} as const;
-
-export const RankingCategorySchema = z.nativeEnum(RankingCategory);
-export type RankingCategoryType = z.infer<typeof RankingCategorySchema>;
+import { RankingCategorySchema } from "./Ranking";
 
 export const MetaFilterSchema = z.object({
   centerId: z.number().positive().optional(),
