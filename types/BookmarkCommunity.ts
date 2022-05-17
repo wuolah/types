@@ -13,6 +13,9 @@ export const BookmarkCommunitySchema = z.object({
   role: z.number().positive().default(1),
   createdAt: z.string(),
   updatedAt: z.string(),
+  deleted: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
 
   user: ProfileSchema.optional(),
   community: CommunitySchema.optional(),
