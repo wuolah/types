@@ -8,6 +8,7 @@ export const CenterSchema = z.object({
   shortName: z.string().nullable().optional(),
   universityId: z.number().nonnegative().optional(),
   logoUrl: z.string().nullable().optional(),
+  zip: z.number().nonnegative().optional(),
 
   // virtuals
   university: UniversitySchema.optional(),

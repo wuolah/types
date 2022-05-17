@@ -71,6 +71,9 @@ export const FilterSchema = z
     visible: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
+    default: z
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
+      .optional(),
     criteria: RankingCategorySchema.optional(),
   })
   .optional();
