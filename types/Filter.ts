@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { BookmarkSubjectStatusSchema } from "./BookmarkSubject";
 import { DocumentCategorySchema } from "./Document";
+import { RankingCategorySchema } from "./Ranking";
 import { stringToBoolean, stringToNumber } from "./utils";
 
 /**
@@ -73,6 +74,7 @@ export const FilterSchema = z
     default: z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
+    criteria: RankingCategorySchema.optional(),
   })
   .optional();
 

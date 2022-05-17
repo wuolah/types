@@ -3,7 +3,7 @@ import { stringToBoolean } from "./utils";
 
 export const ProfileSchema = z.object({
   id: z.number().positive(),
-  nickname: z.string(),
+  nickname: z.string().nullable(),
   popularity: z.number().nonnegative().default(0),
   createdAt: z.string(),
   updatedAt: z.string().optional(),
