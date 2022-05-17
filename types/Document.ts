@@ -20,7 +20,7 @@ export const DocumentSchema = z.object({
   uploadId: z.number().nonnegative().optional(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
-  course: z.number().positive(),
+  course: z.number().nonnegative(),
   subjectId: z.number().nonnegative(),
   extension: z.string(),
   fileType: z.string(),
