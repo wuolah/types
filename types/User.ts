@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { ProfileSchema } from "./Profile";
+import { stringToBoolean, stringToNumber } from "./utils";
 
 export const UserRole = {
   USER: 1,
@@ -20,9 +21,17 @@ export const UserSchema = ProfileSchema.extend({
   countryId: z.number().nonnegative().optional(),
   gender: z.number().max(4).nonnegative().nullable().optional(),
   birthday: z.string().nullable().optional(),
-  money: z.number().nonnegative().nullable().optional(),
-  accumulated: z.number().nonnegative().nullable().optional(),
-  displayMoney: z.boolean(),
+  money: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().nullable().optional()
+  ),
+  accumulated: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().nullable().optional()
+  ),
+  displayMoney: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
 });
 
 export type UserType = z.infer<typeof UserSchema>;
