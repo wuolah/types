@@ -1,5 +1,9 @@
 import { z } from "zod";
+import { CenterSchema } from "./Center";
+import { CommunitySchema } from "./Community";
 import { ProfileSchema } from "./Profile";
+import { SubjectSchema } from "./Subject";
+import { StudySchema } from "./Study";
 import { stringToBoolean } from "./utils";
 
 export const DocumentCategory = {
@@ -20,6 +24,7 @@ export const DocumentSchema = z.object({
   uploadId: z.number().nonnegative().optional(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
+  communityId: z.number().nonnegative(),
   course: z.number().nonnegative(),
   subjectId: z.number().nonnegative(),
   extension: z.string(),
@@ -46,6 +51,10 @@ export const DocumentSchema = z.object({
 
   // virtuals
   user: ProfileSchema.optional(),
+  center: CenterSchema.optional(),
+  study: StudySchema.optional(),
+  subject: SubjectSchema.optional(),
+  community: CommunitySchema.optional(),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;
