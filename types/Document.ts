@@ -29,6 +29,7 @@ export const DocumentSchema = z.object({
   subjectId: z.number().nonnegative(),
   extension: z.string(),
   fileType: z.string(),
+  teacher: z.string().optional(),
   category: z.union([DocumentCategorySchema, z.string()]),
   numPreviews: z.number().nonnegative().default(0),
   numViews: z.number().nonnegative().default(0),
