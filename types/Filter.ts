@@ -35,6 +35,9 @@ export const FilterSchema = z
     countryId: z
       .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
+    uploadId: z
+      .preprocess(stringToNumber(null), z.number().nonnegative())
+      .optional(),
     communityId: z
       .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
