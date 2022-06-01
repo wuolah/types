@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/wuolah/types/compare/v0.1.10...v0.1.12) (2022-06-01)
+
+
+### Bug Fixes
+
+* allow teacher field to be null ([4231f4e](https://github.com/wuolah/types/commits/4231f4e14407e714491f9274836be3b1774f2072))
+
+
+### Chore
+
+* **release:** 0.1.11 ([3bd7bb9](https://github.com/wuolah/types/commits/3bd7bb96d72ed13cfd22c8040e11b3c6553957f6))
+
 ### [0.1.11](https://github.com/wuolah/types/compare/v0.1.10...v0.1.11) (2022-05-19)
 
 ### [0.1.10](https://github.com/wuolah/types/compare/v0.1.9...v0.1.10) (2022-05-05)

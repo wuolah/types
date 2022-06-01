@@ -55,6 +55,7 @@ export const FilterSchema = z
         DocumentCategorySchema.optional(),
       ])
       .optional(),
+    teacher: z.string().optional(),
 
     status: BookmarkSubjectStatusSchema.optional(),
     username: z.union([z.array(z.string()), z.string()]).optional(),
