@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { ProfileSchema } from "./Profile";
-import { stringToBoolean } from "./utils";
-import { DocumentCategorySchema } from "./Document";
+import { stringToBoolean, stringToNumber } from "./utils";
 import { CenterSchema } from "./Center";
 import { StudySchema } from "./Study";
 import { SubjectSchema } from "./Subject";
@@ -12,9 +11,11 @@ export const UploadSchema = z.object({
   userId: z.number().positive().nullable().optional(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
-  course: z.number().nonnegative(),
+  course: z
+    .preprocess(stringToNumber(null), z.number().nonnegative())
+    .optional(),
   subjectId: z.number().nonnegative(),
-  category: z.union([DocumentCategorySchema, z.string()]),
+  category: z.string(),
   teacher: z.string().nullable().optional(),
   numLikes: z.number().nonnegative().default(0),
   isAnonymous: z
