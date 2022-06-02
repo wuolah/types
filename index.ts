@@ -61,6 +61,8 @@ import {
   RankingCategoryType,
 } from "./types/Ranking";
 
+import { UploadSchema, UploadType } from "./types/Upload";
+
 export {
   BookmarkDocumentSchema,
   BookmarkUserSchema,
@@ -84,6 +86,7 @@ export {
   StudySchema,
   SubjectSchema,
   UniversitySchema,
+  UploadSchema,
   UserSchema,
   UserRole,
   UserRoleSchema,
@@ -116,6 +119,7 @@ export type {
   StudyType,
   SubjectType,
   UniversityType,
+  UploadType,
   UserType,
   UserRoleType,
   PaginationResponseType,
