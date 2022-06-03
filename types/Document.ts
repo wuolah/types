@@ -1,6 +1,5 @@
 import { z } from "zod";
 import { ProfileSchema } from "./Profile";
-import { UploadSchema } from "./Upload";
 import { stringToBoolean } from "./utils";
 
 export const DocumentCategory = {
@@ -47,7 +46,6 @@ export const DocumentSchema = z.object({
 
   // virtuals
   user: ProfileSchema.optional(),
-  upload: UploadSchema.optional(),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;
