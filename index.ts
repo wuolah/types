@@ -3,15 +3,15 @@ import {
   BookmarkCommunityType,
 } from "./types/BookmarkCommunity";
 import {
-  BookmarkSubjectSchema,
-  BookmarkSubjectType,
-  BookmarkSubjectStatusType,
-  BookmarkSubjectStatus,
-} from "./types/BookmarkSubject";
-import {
   BookmarkDocumentSchema,
   BookmarkDocumentType,
 } from "./types/BookmarkDocument";
+import {
+  BookmarkSubjectSchema,
+  BookmarkSubjectStatus,
+  BookmarkSubjectStatusType,
+  BookmarkSubjectType,
+} from "./types/BookmarkSubject";
 import { BookmarkUserSchema, BookmarkUserType } from "./types/BookmarkUser";
 import { CenterSchema, CenterType } from "./types/Center";
 import { CommunitySchema, CommunityType } from "./types/Community";
@@ -22,24 +22,49 @@ import {
 import { DetailParamsSchema, DetailParamsType } from "./types/DetailParams";
 import {
   DocumentCategory,
-  DocumentCategoryType,
   DocumentCategorySchema,
+  DocumentCategoryType,
   DocumentSchema,
   DocumentType,
 } from "./types/Document";
-import { FilterType, FilterSchema } from "./types/Filter";
-import { ListParamsType, ListParamsSchema } from "./types/ListParams";
+import { FilterSchema, FilterType } from "./types/Filter";
+import {
+  GiveawayRequerimentSchema,
+  GiveawayRequerimentType,
+  GiveawaySchema,
+  GiveawayStatus,
+  GiveawayStatusType,
+  GiveawayType,
+} from "./types/Giveaway";
+import {
+  GiveawayTicketShema,
+  GiveawayTicketType,
+} from "./types/GiveawayTicket";
+import { ListParamsSchema, ListParamsType } from "./types/ListParams";
+import { MetaFilterSchema, MetaFilterType } from "./types/MetaFilter";
 import {
   MetaPaginationSchema,
   MetaPaginationType,
 } from "./types/MetaPagination";
 import { PaginationSchema, PaginationType } from "./types/Pagination";
-import { PopulateType, PopulateSchema } from "./types/Populate";
+import { PopulateSchema, PopulateType } from "./types/Populate";
 import { ProfileSchema, ProfileType } from "./types/Profile";
-import { SortType, SortSchema } from "./types/Sort";
-import { StudyType, StudySchema } from "./types/Study";
-import { SubjectType, SubjectSchema } from "./types/Subject";
-import { UniversityType, UniversitySchema } from "./types/University";
+import {
+  RankingCategory,
+  RankingCategorySchema,
+  RankingCategoryType,
+  RankingSchema,
+  RankingType,
+} from "./types/Ranking";
+import {
+  PaginationResponseSchema,
+  PaginationResponseType,
+} from "./types/ResponseBody";
+import { SearchReponseType } from "./types/SearchResponse";
+import { SortSchema, SortType } from "./types/Sort";
+import { StudySchema, StudyType } from "./types/Study";
+import { SubjectSchema, SubjectType } from "./types/Subject";
+import { UniversitySchema, UniversityType } from "./types/University";
 import {
   UserRole,
   UserRoleSchema,
@@ -47,19 +72,6 @@ import {
   UserSchema,
   UserType,
 } from "./types/User";
-import {
-  PaginationResponseSchema,
-  PaginationResponseType,
-} from "./types/ResponseBody";
-import { SearchReponseType } from "./types/SearchResponse";
-import { MetaFilterSchema, MetaFilterType } from "./types/MetaFilter";
-import {
-  RankingCategory,
-  RankingSchema,
-  RankingType,
-  RankingCategorySchema,
-  RankingCategoryType,
-} from "./types/Ranking";
 
 export {
   BookmarkDocumentSchema,
@@ -93,7 +105,6 @@ export {
   RankingCategorySchema,
   RankingCategory,
 };
-
 export type {
   BookmarkCommunityType,
   BookmarkSubjectType,
@@ -123,4 +134,12 @@ export type {
   RankingType,
   MetaFilterType,
   RankingCategoryType,
+  GiveawayType,
+  GiveawaySchema,
+  GiveawayStatusType,
+  GiveawayStatus,
+  GiveawayRequerimentSchema,
+  GiveawayRequerimentType,
+  GiveawayTicketType,
+  GiveawayTicketShema,
 };
