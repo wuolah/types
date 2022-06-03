@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { stringToBoolean } from "./utils";
 
-export const GiveawayTicketShema = z.object({
+export const GiveawayTicketSchema = z.object({
   id: z.number().nonnegative(),
   userId: z.number().nonnegative(),
   giveawayId: z.number().nonnegative().optional(),
@@ -15,4 +15,4 @@ export const GiveawayTicketShema = z.object({
     .optional(),
 });
 
-export type GiveawayTicketType = z.infer<typeof GiveawayTicketShema>;
+export type GiveawayTicketType = z.infer<typeof GiveawayTicketSchema>;

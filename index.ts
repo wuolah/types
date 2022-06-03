@@ -37,7 +37,7 @@ import {
   GiveawayType,
 } from "./types/Giveaway";
 import {
-  GiveawayTicketShema,
+  GiveawayTicketSchema,
   GiveawayTicketType,
 } from "./types/GiveawayTicket";
 import { ListParamsSchema, ListParamsType } from "./types/ListParams";
@@ -104,6 +104,10 @@ export {
   MetaFilterSchema,
   RankingCategorySchema,
   RankingCategory,
+  GiveawaySchema,
+  GiveawayRequerimentSchema,
+  GiveawayStatus,
+  GiveawayTicketSchema,
 };
 export type {
   BookmarkCommunityType,
@@ -135,11 +139,7 @@ export type {
   MetaFilterType,
   RankingCategoryType,
   GiveawayType,
-  GiveawaySchema,
   GiveawayStatusType,
-  GiveawayStatus,
-  GiveawayRequerimentSchema,
   GiveawayRequerimentType,
   GiveawayTicketType,
-  GiveawayTicketShema,
 };
