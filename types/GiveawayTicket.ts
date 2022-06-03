@@ -9,7 +9,7 @@ export const GiveawayTicketSchema = z.object({
   sourceType: z.string(),
   used: z.string().optional(),
   number: z.number().nonnegative().optional(),
-  created: z.string().optional(),
+  createdAt: z.string().optional(),
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),

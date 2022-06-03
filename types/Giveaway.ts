@@ -10,12 +10,12 @@ const GiveawayStatusSchema = z.nativeEnum(GiveawayStatus);
 
 export type GiveawayStatusType = z.infer<typeof GiveawayStatusSchema>;
 
-export const GiveawayRequerimentSchema = z.object({
+export const GiveawayRequirementSchema = z.object({
   typeReq: z.string(),
   value: z.string(),
 });
 
-export type GiveawayRequerimentType = z.infer<typeof GiveawayRequerimentSchema>;
+export type GiveawayRequirementType = z.infer<typeof GiveawayRequirementSchema>;
 
 export const GiveawaySchema = z.object({
   id: z.number().nonnegative(),
@@ -26,7 +26,7 @@ export const GiveawaySchema = z.object({
   image: z.string(),
   createdAt: z.string(),
   status: GiveawayStatusSchema,
-  requeriments: z.array(GiveawayRequerimentSchema).optional(),
+  requeriments: z.array(GiveawayRequirementSchema).optional(),
 });
 
 export type GiveawayType = z.infer<typeof GiveawaySchema>;
