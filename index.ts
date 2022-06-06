@@ -29,8 +29,8 @@ import {
 } from "./types/Document";
 import { FilterSchema, FilterType } from "./types/Filter";
 import {
-  GiveawayRequerimentSchema,
-  GiveawayRequerimentType,
+  GiveawayRequirementSchema,
+  GiveawayRequirementType,
   GiveawaySchema,
   GiveawayStatus,
   GiveawayStatusType,
@@ -105,7 +105,7 @@ export {
   RankingCategorySchema,
   RankingCategory,
   GiveawaySchema,
-  GiveawayRequerimentSchema,
+  GiveawayRequirementSchema,
   GiveawayStatus,
   GiveawayTicketSchema,
 };
@@ -140,6 +140,6 @@ export type {
   RankingCategoryType,
   GiveawayType,
   GiveawayStatusType,
-  GiveawayRequerimentType,
+  GiveawayRequirementType,
   GiveawayTicketType,
 };
