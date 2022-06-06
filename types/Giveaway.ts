@@ -12,7 +12,7 @@ export type GiveawayStatusType = z.infer<typeof GiveawayStatusSchema>;
 
 export const GiveawayRequirementSchema = z.object({
   typeReq: z.string(),
-  value: z.string(),
+  valueReq: z.string(),
 });
 
 export type GiveawayRequirementType = z.infer<typeof GiveawayRequirementSchema>;
@@ -25,6 +25,7 @@ export const GiveawaySchema = z.object({
   description: z.string(),
   image: z.string(),
   createdAt: z.string(),
+  startAt: z.string(),
   status: GiveawayStatusSchema,
   requeriments: z.array(GiveawayRequirementSchema).optional(),
 });
