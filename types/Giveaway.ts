@@ -11,8 +11,8 @@ const GiveawayStatusSchema = z.nativeEnum(GiveawayStatus);
 export type GiveawayStatusType = z.infer<typeof GiveawayStatusSchema>;
 
 export const GiveawayRequirementSchema = z.object({
-  typeReq: z.string(),
-  valueReq: z.string(),
+  countryIds: z.array(z.number()).optional(),
+  communityIds: z.array(z.number()).optional(),
 });
 
 export type GiveawayRequirementType = z.infer<typeof GiveawayRequirementSchema>;
@@ -22,12 +22,13 @@ export const GiveawaySchema = z.object({
   participants: z.number().nonnegative(),
   title: z.string(),
   subtitle: z.string().optional().nullable(),
-  description: z.string(),
-  image: z.string(),
+  description: z.string().optional().nullable(),
+  image: z.string().optional().nullable(),
+  winner: z.number().optional().nullable(),
   createdAt: z.string(),
   startAt: z.string(),
   status: GiveawayStatusSchema,
-  requeriments: z.array(GiveawayRequirementSchema).optional(),
+  requirements: GiveawayRequirementSchema.optional(),
 });
 
 export type GiveawayType = z.infer<typeof GiveawaySchema>;

@@ -79,6 +79,9 @@ export const FilterSchema = z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
     criteria: RankingCategorySchema.optional(),
+    finished: z
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
+      .optional(),
   })
   .optional();
 
