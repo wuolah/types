@@ -67,6 +67,7 @@ import {
   PaginationResponseType,
 } from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
+import { SocialSchema, SocialType } from "./types/Social";
 import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
 import { SubjectSchema, SubjectType } from "./types/Subject";
@@ -116,6 +117,7 @@ export {
   GiveawayRequirementSchema,
   GiveawayStatus,
   GiveawayTicketSchema,
+  SocialSchema,
 };
 export type {
   ArtifactType,
@@ -152,4 +154,5 @@ export type {
   GiveawayStatusType,
   GiveawayRequirementType,
   GiveawayTicketType,
+  SocialType,
 };
