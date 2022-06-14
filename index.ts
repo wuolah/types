@@ -1,4 +1,10 @@
 import {
+  ArtifactSchema,
+  ArtifactType,
+  ArtifactTypeSchema,
+  ArtifactTypeType,
+} from "./types/Artifact";
+import {
   BookmarkCommunitySchema,
   BookmarkCommunityType,
 } from "./types/BookmarkCommunity";
@@ -74,6 +80,8 @@ import {
 } from "./types/User";
 
 export {
+  ArtifactSchema,
+  ArtifactTypeSchema,
   BookmarkDocumentSchema,
   BookmarkUserSchema,
   BookmarkCommunitySchema,
@@ -110,6 +118,8 @@ export {
   GiveawayTicketSchema,
 };
 export type {
+  ArtifactType,
+  ArtifactTypeType,
   BookmarkCommunityType,
   BookmarkSubjectType,
   BookmarkSubjectStatusType,
