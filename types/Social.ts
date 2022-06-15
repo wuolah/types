@@ -1,4 +1,9 @@
 import { z } from "zod";
+import { CenterSchema } from "./Center";
+import { CommunitySchema } from "./Community";
+import { ProfileSchema } from "./Profile";
+import { StudySchema } from "./Study";
+import { SubjectSchema } from "./Subject";
 import { stringToBoolean } from "./utils";
 
 export const SocialEnum = {
@@ -16,30 +21,36 @@ export type SocialEnumType = z.infer<typeof SocialEnumSchema>;
 
 export const SocialSchema = z.object({
   id: z.number().nonnegative(),
+  deleted: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
+  createdAt: z.string().optional(),
+  updatedAt: z.string().optional(),
+
   type: SocialEnumSchema,
-  userId: z.number().nonnegative(),
-  countryId: z.number().nonnegative(),
-  cityId: z.number().nonnegative(),
-  universityId: z.number().nonnegative(),
-  centerId: z.number().nonnegative(),
-  studyId: z.number().nonnegative(),
-  course: z.number().nonnegative(),
-  folderId: z.number().nonnegative(),
-  uploadId: z.number().nonnegative().optional().nullable(),
   title: z.string().optional().nullable(),
   text: z.string().optional().nullable(),
+  uploadId: z.number().nonnegative().optional().nullable(),
   photoDirectory: z.string().optional().nullable(),
   site: z.string().optional().nullable(),
   dateTime: z.string().optional().nullable(),
   data: z.string().optional().nullable(),
-  likes: z.number().nonnegative().optional().nullable(),
-  dislikes: z.number().nonnegative().optional().nullable(),
+
+  numLikes: z.number().nonnegative().optional().nullable(),
+  numDislikes: z.number().nonnegative().optional().nullable(),
   numComments: z.number().nonnegative().optional().nullable(),
-  deleted: z
-    .preprocess(stringToBoolean(false), z.boolean().nullable())
-    .optional(),
-  created: z.string().optional(),
-  updated: z.string().optional(),
+
+  userId: z.number().nonnegative(),
+  communityId: z.number().nonnegative(),
+  subjectId: z.number().nonnegative(),
+  centerId: z.number().nonnegative(),
+  studyId: z.number().nonnegative(),
+  // virtuals
+  user: ProfileSchema.optional(),
+  center: CenterSchema.optional(),
+  study: StudySchema.optional(),
+  subject: SubjectSchema.optional(),
+  community: CommunitySchema.optional(),
 });
 
 export type SocialType = z.infer<typeof SocialSchema>;
