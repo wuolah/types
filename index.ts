@@ -1,5 +1,6 @@
 import {
   ArtifactSchema,
+  ArtifactTypeEnum,
   ArtifactType,
   ArtifactTypeSchema,
   ArtifactTypeType,
@@ -82,6 +83,7 @@ import {
 
 export {
   ArtifactSchema,
+  ArtifactTypeEnum,
   ArtifactTypeSchema,
   BookmarkDocumentSchema,
   BookmarkUserSchema,

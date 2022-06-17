@@ -3,9 +3,8 @@ import { DocumentSchema } from "./Document";
 import { SocialSchema } from "./Social";
 
 export const ArtifactTypeEnum = {
-  DOCUMENT: "DOCUMENT",
-  SOCIAL: "SOCIAL",
-  FOLDER: "FOLDER",
+  DOCUMENT: "document",
+  SOCIAL: "social",
 } as const;
 export const ArtifactTypeSchema = z.nativeEnum(ArtifactTypeEnum);
 export type ArtifactTypeType = z.infer<typeof ArtifactTypeSchema>;
@@ -20,11 +19,6 @@ const DocumentArtifact = BaseArtifact.extend({
   value: DocumentSchema,
 });
 
-const FolderArtifact = BaseArtifact.extend({
-  type: z.literal(ArtifactTypeEnum.FOLDER),
-  value: z.object({}),
-});
-
 const SocialArtifact = BaseArtifact.extend({
   type: z.literal(ArtifactTypeEnum.SOCIAL),
   value: SocialSchema,
@@ -32,7 +26,6 @@ const SocialArtifact = BaseArtifact.extend({
 
 export const ArtifactSchema = z.discriminatedUnion("type", [
   DocumentArtifact,
-  FolderArtifact,
   SocialArtifact,
 ]);
 
