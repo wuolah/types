@@ -24,7 +24,7 @@ export const SocialSchema = z.object({
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
-  createdAt: z.string().optional(),
+  createdAt: z.string(),
   updatedAt: z.string().optional(),
 
   type: SocialEnumSchema,
