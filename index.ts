@@ -73,6 +73,7 @@ import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
 import { SubjectSchema, SubjectType } from "./types/Subject";
 import { UniversitySchema, UniversityType } from "./types/University";
+import { UploadSchema, UploadType } from "./types/Upload";
 import {
   UserRole,
   UserRoleSchema,
@@ -120,6 +121,7 @@ export {
   GiveawayStatus,
   GiveawayTicketSchema,
   SocialSchema,
+  UploadSchema,
 };
 export type {
   ArtifactType,
@@ -157,4 +159,5 @@ export type {
   GiveawayRequirementType,
   GiveawayTicketType,
   SocialType,
+  UploadType,
 };
