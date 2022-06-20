@@ -11,7 +11,6 @@ export type ArtifactTypeType = z.infer<typeof ArtifactTypeSchema>;
 
 const BaseArtifact = z.object({
   id: z.string(),
-  name: z.string(),
 });
 
 const DocumentArtifact = BaseArtifact.extend({
