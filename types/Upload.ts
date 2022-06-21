@@ -31,8 +31,12 @@ export const UploadSchema = z.object({
     .optional(),
 
   numFiles: z.number().nonnegative().default(0),
+  numPreviews: z.number().nonnegative().default(0),
+  numViews: z.number().nonnegative().default(0),
+  numDownloads: z.number().nonnegative().default(0),
+  numPremiumDownloads: z.number().nonnegative().default(0),
+  numBookmarks: z.number().nonnegative().default(0),
   numLikes: z.number().nonnegative().default(0),
-  numDislikes: z.number().nonnegative().default(0),
 
   userId: z.number().positive().nullable().optional(),
   communityId: z.number().nonnegative(),
