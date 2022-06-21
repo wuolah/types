@@ -21,11 +21,11 @@ export type SocialEnumType = z.infer<typeof SocialEnumSchema>;
 
 export const SocialSchema = z.object({
   id: z.number().nonnegative(),
+  createdAt: z.string(),
+  updatedAt: z.string().optional(),
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
-  createdAt: z.string(),
-  updatedAt: z.string().optional(),
 
   type: SocialEnumSchema,
   title: z.string().optional().nullable(),
@@ -47,10 +47,10 @@ export const SocialSchema = z.object({
   studyId: z.number().nonnegative(),
   // virtuals
   user: ProfileSchema.optional(),
+  community: CommunitySchema.optional(),
+  subject: SubjectSchema.optional(),
   center: CenterSchema.optional(),
   study: StudySchema.optional(),
-  subject: SubjectSchema.optional(),
-  community: CommunitySchema.optional(),
 });
 
 export type SocialType = z.infer<typeof SocialSchema>;

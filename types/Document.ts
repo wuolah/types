@@ -19,25 +19,18 @@ export type DocumentCategoryType = z.infer<typeof DocumentCategorySchema>;
 
 export const DocumentSchema = z.object({
   id: z.number().positive(),
+  createdAt: z.string(),
+  updatedAt: z.string().optional(),
+  deleted: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
+
+  category: z.union([DocumentCategorySchema, z.string()]),
   name: z.string(),
-  userId: z.number().positive().nullable().optional(),
-  uploadId: z.number().nonnegative().optional(),
-  centerId: z.number().nonnegative(),
-  studyId: z.number().nonnegative(),
-  communityId: z.number().nonnegative(),
-  course: z.number().nonnegative(),
-  subjectId: z.number().nonnegative(),
   extension: z.string(),
   fileType: z.string(),
   teacher: z.string().nullable().optional(),
-  category: z.union([DocumentCategorySchema, z.string()]),
-  numPreviews: z.number().nonnegative().default(0),
-  numViews: z.number().nonnegative().default(0),
-  numDownloads: z.number().nonnegative().default(0),
-  numPremiumDownloads: z.number().nonnegative().default(0),
-  numBookmarks: z.number().nonnegative().default(0),
-  numLikes: z.number().nonnegative().default(0),
-  numPages: z.number().nonnegative().default(0),
+
   s3Key: z.string().optional(),
   isAnonymous: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
@@ -45,17 +38,28 @@ export const DocumentSchema = z.object({
   isMonetizable: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
-  createdAt: z.string(),
-  deleted: z
-    .preprocess(stringToBoolean(false), z.boolean().nullable())
-    .optional(),
 
+  numPages: z.number().nonnegative().default(0),
+  numPreviews: z.number().nonnegative().default(0),
+  numViews: z.number().nonnegative().default(0),
+  numDownloads: z.number().nonnegative().default(0),
+  numPremiumDownloads: z.number().nonnegative().default(0),
+  numBookmarks: z.number().nonnegative().default(0),
+  numLikes: z.number().nonnegative().default(0),
+
+  uploadId: z.number().nonnegative().optional(),
+
+  userId: z.number().positive().nullable().optional(),
+  communityId: z.number().nonnegative(),
+  subjectId: z.number().nonnegative(),
+  centerId: z.number().nonnegative(),
+  studyId: z.number().nonnegative(),
   // virtuals
   user: ProfileSchema.optional(),
+  community: CommunitySchema.optional(),
+  subject: SubjectSchema.optional(),
   center: CenterSchema.optional(),
   study: StudySchema.optional(),
-  subject: SubjectSchema.optional(),
-  community: CommunitySchema.optional(),
 });
 
 export type DocumentType = z.infer<typeof DocumentSchema>;
