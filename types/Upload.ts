@@ -5,7 +5,7 @@ import { DocumentCategorySchema } from "./Document";
 import { ProfileSchema } from "./Profile";
 import { StudySchema } from "./Study";
 import { SubjectSchema } from "./Subject";
-import { stringToBoolean } from "./utils";
+import { stringToBoolean, stringToNumber } from "./utils";
 
 export const UploadSchema = z.object({
   id: z.number().nonnegative(),
@@ -30,13 +30,30 @@ export const UploadSchema = z.object({
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
 
-  numFiles: z.number().nonnegative().default(0),
-  numPreviews: z.number().nonnegative().default(0),
-  numViews: z.number().nonnegative().default(0),
-  numDownloads: z.number().nonnegative().default(0),
-  numPremiumDownloads: z.number().nonnegative().default(0),
-  numBookmarks: z.number().nonnegative().default(0),
-  numLikes: z.number().nonnegative().default(0),
+  numFiles: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numPreviews: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numViews: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numDownloads: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numPremiumDownloads: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numLikes: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
 
   userId: z.number().positive().nullable().optional(),
   communityId: z.number().nonnegative(),
