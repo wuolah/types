@@ -30,6 +30,7 @@ export const DocumentSchema = z.object({
   extension: z.string(),
   fileType: z.string(),
   teacher: z.string().nullable().optional(),
+  course: z.number().nonnegative(),
 
   s3Key: z.string().optional(),
   isAnonymous: z

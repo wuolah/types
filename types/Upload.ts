@@ -18,6 +18,7 @@ export const UploadSchema = z.object({
   category: z.union([DocumentCategorySchema, z.string()]),
   name: z.string(),
   teacher: z.string().nullable().optional(),
+  course: z.number().nonnegative(),
   comments: z.string().nullable().optional(),
 
   isFolder: z
