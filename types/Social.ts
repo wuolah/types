@@ -35,7 +35,6 @@ export const SocialSchema = z.object({
   site: z.string().optional().nullable(),
   dateTime: z.string().optional().nullable(),
   data: z.string().optional().nullable(),
-  course: z.number().nonnegative(),
 
   numLikes: z.number().nonnegative().optional().nullable(),
   numDislikes: z.number().nonnegative().optional().nullable(),
