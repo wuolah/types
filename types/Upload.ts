@@ -14,7 +14,7 @@ export const UploadSchema = z.object({
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
-
+  course: z.preprocess(stringToNumber(0), z.number().nonnegative()),
   category: z.union([DocumentCategorySchema, z.string()]),
   name: z.string(),
   teacher: z.string().nullable().optional(),

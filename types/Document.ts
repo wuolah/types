@@ -46,6 +46,7 @@ export const DocumentSchema = z.object({
   numPremiumDownloads: z.number().nonnegative().default(0),
   numBookmarks: z.number().nonnegative().default(0),
   numLikes: z.number().nonnegative().default(0),
+  course: z.number().nonnegative(),
 
   uploadId: z.number().nonnegative().optional(),
 
