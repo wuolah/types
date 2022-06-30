@@ -32,6 +32,7 @@ export const UserSchema = ProfileSchema.extend({
   displayMoney: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
+  invitationCode: z.string().nullable().optional(),
 });
 
 export type UserType = z.infer<typeof UserSchema>;
