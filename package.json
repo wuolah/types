@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "dependencies": {
-    "zod": "^3.11.6"
+    "zod": "3.17.3"
   },
   "devDependencies": {
     "standard-version": "^9.3.2",
