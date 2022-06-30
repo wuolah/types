@@ -51,7 +51,6 @@ export const SocialSchema = z.object({
   countryId: z.number().nonnegative(),
   cityId: z.number().nonnegative(),
   universityId: z.number().nonnegative(),
-  course: z.number().nonnegative(),
 
   // virtuals
   user: ProfileSchema.optional(),
