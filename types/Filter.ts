@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ArtifactTypeSchema } from "./Artifact";
 import { BookmarkSubjectStatusSchema } from "./BookmarkSubject";
 import { DocumentCategorySchema } from "./Document";
 import { RankingCategorySchema } from "./Ranking";
@@ -79,6 +80,13 @@ export const FilterSchema = z
       .preprocess(stringToBoolean(null), z.boolean().nullable())
       .optional(),
     criteria: RankingCategorySchema.optional(),
+    finished: z
+      .preprocess(stringToBoolean(null), z.boolean().nullable())
+      .optional(),
+
+    type: z
+      .union([z.array(ArtifactTypeSchema), ArtifactTypeSchema.optional()])
+      .optional(),
   })
   .optional();
 

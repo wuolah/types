@@ -33,6 +33,7 @@ export const UserSchema = ProfileSchema.extend({
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
   invitationCode: z.string().nullable().optional(),
+  pro: z.preprocess(stringToBoolean(null), z.boolean().nullable()).optional(),
 });
 
 export type UserType = z.infer<typeof UserSchema>;
