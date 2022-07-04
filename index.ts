@@ -70,6 +70,10 @@ import {
 import { SearchReponseType } from "./types/SearchResponse";
 import { SocialSchema, SocialType } from "./types/Social";
 import { SocialCommentSchema, SocialCommentType } from "./types/SocialComment";
+import {
+  SocialCommentLikeSchema,
+  SocialCommentLikeType,
+} from "./types/SocialCommentLike";
 import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
 import { SubjectSchema, SubjectType } from "./types/Subject";
@@ -124,6 +128,7 @@ export {
   SocialSchema,
   UploadSchema,
   SocialCommentSchema,
+  SocialCommentLikeSchema,
 };
 export type {
   ArtifactType,
@@ -163,4 +168,5 @@ export type {
   SocialType,
   SocialCommentType,
   UploadType,
+  SocialCommentLikeType,
 };
