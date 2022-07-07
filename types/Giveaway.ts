@@ -6,7 +6,7 @@ export const GiveawayStatus = {
   FINISHED: "FINISHED",
 } as const;
 
-const GiveawayStatusSchema = z.nativeEnum(GiveawayStatus);
+export const GiveawayStatusSchema = z.nativeEnum(GiveawayStatus);
 
 export type GiveawayStatusType = z.infer<typeof GiveawayStatusSchema>;
 
