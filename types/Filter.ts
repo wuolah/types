@@ -60,7 +60,6 @@ export const FilterSchema = z
       ])
       .optional(),
     teacher: z.string().optional(),
-    type: z.string().optional(),
 
     status: BookmarkSubjectStatusSchema.optional(),
     username: z.union([z.array(z.string()), z.string()]).optional(),
