@@ -42,6 +42,9 @@ export const FilterSchema = z
     communityId: z
       .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
+    socialId: z
+      .preprocess(stringToNumber(null), z.number().nonnegative())
+      .optional(),
     communitySlug: z.string().optional(),
     course: z
       .preprocess(stringToNumber(null), z.number().positive())

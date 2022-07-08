@@ -4,7 +4,7 @@ import { CommunitySchema } from "./Community";
 import { ProfileSchema } from "./Profile";
 import { StudySchema } from "./Study";
 import { SubjectSchema } from "./Subject";
-import { stringToBoolean } from "./utils";
+import { stringToBoolean, stringToLowerCase } from "./utils";
 
 export const SocialEnum = {
   DOUBT: "doubt",
@@ -27,11 +27,11 @@ export const SocialSchema = z.object({
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
 
-  type: SocialEnumSchema,
+  type: z.preprocess(stringToLowerCase(null), SocialEnumSchema),
   title: z.string().optional().nullable(),
   text: z.string().optional().nullable(),
   photoDirectory: z.string().optional().nullable(),
-  course: z.number().nonnegative(),
+  course: z.number().nonnegative().optional(),
 
   numLikes: z.number().nonnegative().optional().nullable(),
   numDislikes: z.number().nonnegative().optional().nullable(),
@@ -39,7 +39,7 @@ export const SocialSchema = z.object({
 
   userId: z.number().nonnegative(),
   communityId: z.number().nonnegative(),
-  subjectId: z.number().nonnegative(),
+  subjectId: z.number().nonnegative().optional(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
   // virtuals

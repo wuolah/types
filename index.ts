@@ -68,12 +68,13 @@ import {
   PaginationResponseType,
 } from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
-import { SocialSchema, SocialType } from "./types/Social";
+import { SocialSchema, SocialType, SocialEnumType } from "./types/Social";
 import { SocialCommentSchema, SocialCommentType } from "./types/SocialComment";
 import {
   SocialCommentLikeSchema,
   SocialCommentLikeType,
-  LikeTypeEnum,
+  LIKE_TYPE,
+  LikeType,
 } from "./types/SocialCommentLike";
 import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
@@ -130,7 +131,7 @@ export {
   UploadSchema,
   SocialCommentSchema,
   SocialCommentLikeSchema,
-  LikeTypeEnum,
+  LIKE_TYPE,
 };
 export type {
   ArtifactType,
@@ -169,6 +170,8 @@ export type {
   GiveawayTicketType,
   SocialType,
   SocialCommentType,
+  SocialEnumType,
   UploadType,
   SocialCommentLikeType,
+  LikeType,
 };
