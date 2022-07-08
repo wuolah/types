@@ -1,6 +1,6 @@
 import { z } from "zod";
+import { ProfileSchema } from "./Profile";
 import { SocialCommentSchema } from "./SocialComment";
-import { UserSchema } from "./User";
 
 export const LIKE_TYPE = {
   LIKE: "like",
@@ -19,7 +19,7 @@ export const SocialCommentLikeSchema = z.object({
   userId: z.number().positive(),
   commentId: z.number().positive(),
   // virtuals
-  user: UserSchema.optional(),
+  user: ProfileSchema.optional(),
   comment: SocialCommentSchema.optional(),
 });
 

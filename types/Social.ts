@@ -35,7 +35,7 @@ export const SocialSchema = z.object({
 
   numLikes: z.number().nonnegative().optional().nullable(),
   numDislikes: z.number().nonnegative().optional().nullable(),
-  numComments: z.number().nonnegative().optional().nullable(),
+  numComments: z.number().optional().nullable(),
 
   userId: z.number().nonnegative(),
   communityId: z.number().nonnegative(),
