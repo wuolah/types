@@ -2,12 +2,13 @@ import { z } from "zod";
 import { SocialCommentSchema } from "./SocialComment";
 import { UserSchema } from "./User";
 
-export const TYPE = {
+export const LIKE_TYPE = {
   LIKE: "like",
   DISLIKE: "dislike",
 } as const;
 
-export const LikeTypeEnum = z.nativeEnum(TYPE);
+export const LikeTypeEnum = z.nativeEnum(LIKE_TYPE);
+export type LikeType = z.infer<typeof LikeTypeEnum>;
 
 export const SocialCommentLikeSchema = z.object({
   id: z.number().positive(),
