@@ -73,6 +73,7 @@ import { SocialCommentSchema, SocialCommentType } from "./types/SocialComment";
 import {
   SocialCommentLikeSchema,
   SocialCommentLikeType,
+  LikeTypeEnum,
 } from "./types/SocialCommentLike";
 import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
@@ -129,6 +130,7 @@ export {
   UploadSchema,
   SocialCommentSchema,
   SocialCommentLikeSchema,
+  LikeTypeEnum,
 };
 export type {
   ArtifactType,
