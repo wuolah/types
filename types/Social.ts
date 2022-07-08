@@ -30,11 +30,7 @@ export const SocialSchema = z.object({
   type: SocialEnumSchema,
   title: z.string().optional().nullable(),
   text: z.string().optional().nullable(),
-  uploadId: z.number().nonnegative().optional().nullable(),
   photoDirectory: z.string().optional().nullable(),
-  site: z.string().optional().nullable(),
-  dateTime: z.string().optional().nullable(),
-  data: z.string().optional().nullable(),
   course: z.number().nonnegative(),
 
   numLikes: z.number().nonnegative().optional().nullable(),
@@ -46,12 +42,6 @@ export const SocialSchema = z.object({
   subjectId: z.number().nonnegative(),
   centerId: z.number().nonnegative(),
   studyId: z.number().nonnegative(),
-  folderId: z.number().nonnegative(),
-
-  countryId: z.number().nonnegative(),
-  cityId: z.number().nonnegative(),
-  universityId: z.number().nonnegative(),
-
   // virtuals
   user: ProfileSchema.optional(),
   community: CommunitySchema.optional(),
