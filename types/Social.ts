@@ -7,12 +7,12 @@ import { SubjectSchema } from "./Subject";
 import { stringToBoolean } from "./utils";
 
 export const SocialEnum = {
-  DOUBT: "DOUBT",
-  EVENT: "EVENT",
-  PUBLICATION: "PUBLICATION",
-  RUMOR: "RUMOR",
-  UPLOAD: "UPLOAD",
-  GIVEAWAY: "GIVEAWAY",
+  DOUBT: "doubt",
+  EVENT: "event",
+  PUBLICATION: "publication",
+  RUMOR: "rumor",
+  UPLOAD: "upload",
+  GIVEAWAY: "giveaway",
 } as const;
 
 export const SocialEnumSchema = z.nativeEnum(SocialEnum);
