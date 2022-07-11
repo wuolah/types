@@ -25,6 +25,7 @@ export const GiveawaySchema = z.object({
   description: z.string().optional().nullable(),
   image: z.string().optional().nullable(),
   winner: z.number().optional().nullable(),
+  conditionsURL: z.string(),
   createdAt: z.string(),
   startAt: z.string(),
   status: GiveawayStatusSchema,
