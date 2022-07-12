@@ -63,6 +63,9 @@ export const FilterSchema = z
       ])
       .optional(),
     teacher: z.string().optional(),
+    commentId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
 
     status: BookmarkSubjectStatusSchema.optional(),
     username: z.union([z.array(z.string()), z.string()]).optional(),
