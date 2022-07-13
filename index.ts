@@ -1,7 +1,7 @@
 import {
   ArtifactSchema,
-  ArtifactTypeEnum,
   ArtifactType,
+  ArtifactTypeEnum,
   ArtifactTypeSchema,
   ArtifactTypeType,
 } from "./types/Artifact";
@@ -68,7 +68,8 @@ import {
   PaginationResponseType,
 } from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
-import { SocialSchema, SocialType } from "./types/Social";
+import { SocialSchema, SocialType, SocialEnumType } from "./types/Social";
+import { SocialCommentSchema, SocialCommentType } from "./types/SocialComment";
 import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
 import { SubjectSchema, SubjectType } from "./types/Subject";
@@ -122,6 +123,7 @@ export {
   GiveawayTicketSchema,
   SocialSchema,
   UploadSchema,
+  SocialCommentSchema,
 };
 export type {
   ArtifactType,
@@ -159,5 +161,7 @@ export type {
   GiveawayRequirementType,
   GiveawayTicketType,
   SocialType,
+  SocialCommentType,
+  SocialEnumType,
   UploadType,
 };

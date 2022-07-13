@@ -10,3 +10,7 @@ export const stringToBoolean =
         ? false
         : defaultValue
       : defaultValue;
+
+export const stringToLowerCase =
+  (defaultValue: string | null) => (val: unknown) =>
+    String(val).toLowerCase() || defaultValue;

@@ -42,6 +42,9 @@ export const FilterSchema = z
     communityId: z
       .preprocess(stringToNumber(null), z.number().nonnegative())
       .optional(),
+    socialId: z
+      .preprocess(stringToNumber(null), z.number().nonnegative())
+      .optional(),
     communitySlug: z.string().optional(),
     course: z
       .preprocess(stringToNumber(null), z.number().positive())
@@ -60,6 +63,9 @@ export const FilterSchema = z
       ])
       .optional(),
     teacher: z.string().optional(),
+    commentId: z
+      .preprocess(stringToNumber(null), z.number().positive())
+      .optional(),
 
     status: BookmarkSubjectStatusSchema.optional(),
     username: z.union([z.array(z.string()), z.string()]).optional(),
