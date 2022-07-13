@@ -68,7 +68,12 @@ import {
   PaginationResponseType,
 } from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
-import { SocialSchema, SocialType, SocialEnumType } from "./types/Social";
+import {
+  SocialSchema,
+  SocialType,
+  SocialEnum,
+  SocialEnumType,
+} from "./types/Social";
 import { SocialCommentSchema, SocialCommentType } from "./types/SocialComment";
 import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
@@ -121,6 +126,7 @@ export {
   GiveawayRequirementSchema,
   GiveawayStatus,
   GiveawayTicketSchema,
+  SocialEnum,
   SocialSchema,
   UploadSchema,
   SocialCommentSchema,
