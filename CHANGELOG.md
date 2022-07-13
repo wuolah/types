@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/wuolah/types/compare/v0.2.0...v0.2.1) (2022-07-13)
+
+
+### Features
+
+* add LikeTypeEnum ([33eb704](https://github.com/wuolah/types/commits/33eb704f147b98f4e230ebb6eb7a3e476819ad11))
+* **Social:** add commentId filter ([6bbe898](https://github.com/wuolah/types/commits/6bbe898f9b5f23ffe38f8bf6f1a542edc7b7834b))
+* **Social:** clean types ([9b3fa2b](https://github.com/wuolah/types/commits/9b3fa2b1b92cf564df29db49345842b2d35cdeb5))
+* **SocialComment:** add SocialComment ([36f297f](https://github.com/wuolah/types/commits/36f297f240059d2480638fa58444268299c413a4))
+* **SocialCommentLike:** remove type ([4eb2a62](https://github.com/wuolah/types/commits/4eb2a626e9e1dc67bba869dfb0b0a65ab5e54f70))
+* **Social:** update SocialEnum ([bef5a01](https://github.com/wuolah/types/commits/bef5a01a347a2ae1c34eca6e6bb6381ce1a9c6c7))
+
+## [0.2.0](https://github.com/wuolah/types/compare/v0.1.13...v0.2.0) (2022-06-29)
+
+
+### Features
+
+* add course to Document Social and Upload ([e7cda5d](https://github.com/wuolah/types/commits/e7cda5d80a3e005aca83b74f7fe9a5e4b12fdcfe))
+* **Artifact:** add discriminatedUnion ([62ccc8a](https://github.com/wuolah/types/commits/62ccc8ac27b4414f15a3134e7af74032dd8b94c3))
+* **Artifact:** add support for upload ([aacc3d1](https://github.com/wuolah/types/commits/aacc3d1080dde40de61e9e225541af78b6476e59))
+* **Artifact:** remove folder and add filter type ([0bcae69](https://github.com/wuolah/types/commits/0bcae697de8cad50a61f5342ff01a8ad7a7832a6))
+* **Artifact:** remove name ([f4c7f80](https://github.com/wuolah/types/commits/f4c7f80a140a5d642f365d9b355524adcf1013dd))
+* **Artifacts:** create basic type ([a9b817e](https://github.com/wuolah/types/commits/a9b817e9f80785e0701ce4a5a803a5256c91640c))
+* remove course from model ([d07c788](https://github.com/wuolah/types/commits/d07c788de02892da8065d6b4c2496884628d988c))
+* **Social:** add standar model ([75954ce](https://github.com/wuolah/types/commits/75954ce33434ad3be1711e89313f842673daa868))
+* **Social:** createdAt is mandatory ([2bd8a50](https://github.com/wuolah/types/commits/2bd8a50f0b5c29461352ac31e8a88fa65d5858cc))
+* **Upload:** add proper numX attributes ([ebbd37c](https://github.com/wuolah/types/commits/ebbd37c487fca6053b5001254c4d90b12057887c))
+* **Upload:** added upload model ([424fa2e](https://github.com/wuolah/types/commits/424fa2e4e70afa555a883ac05a56d687f4f2cca6))
+* **Upload:** parse string to number ([78419cf](https://github.com/wuolah/types/commits/78419cf3e744f58e1798112cb7b2bd7819a1b0ab))
+
+
+### Bug Fixes
+
+* fixes giveaway typo ([871cacc](https://github.com/wuolah/types/commits/871caccdb59cb8f0424f7954787637a101862055))
+
 ### [0.1.13](https://github.com/wuolah/types/compare/v0.1.12...v0.1.13) (2022-06-06)
 
 

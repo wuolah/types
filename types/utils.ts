@@ -1,5 +1,6 @@
 export const stringToNumber = (defaultValue: number | null) => (val: unknown) =>
   parseInt(String(val), 10) || defaultValue;
+
 export const stringToBoolean =
   (defaultValue: boolean | null) => (val: unknown) =>
     val != undefined
@@ -9,3 +10,7 @@ export const stringToBoolean =
         ? false
         : defaultValue
       : defaultValue;
+
+export const stringToLowerCase =
+  (defaultValue: string | null) => (val: unknown) =>
+    String(val).toLowerCase() || defaultValue;
