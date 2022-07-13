@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/wuolah/types/compare/v0.2.1...v0.2.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* export social enum ([6e1822e](https://github.com/wuolah/types/commits/6e1822ed8efa590b23fd79050b982c9192b75218))
+
 ### [0.2.1](https://github.com/wuolah/types/compare/v0.2.0...v0.2.1) (2022-07-13)
 
 
