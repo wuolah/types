@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/wuolah/types/compare/v0.2.0...v0.2.1) (2022-07-13)
+
+
+### Features
+
+* add LikeTypeEnum ([33eb704](https://github.com/wuolah/types/commits/33eb704f147b98f4e230ebb6eb7a3e476819ad11))
+* **Social:** add commentId filter ([6bbe898](https://github.com/wuolah/types/commits/6bbe898f9b5f23ffe38f8bf6f1a542edc7b7834b))
+* **Social:** clean types ([9b3fa2b](https://github.com/wuolah/types/commits/9b3fa2b1b92cf564df29db49345842b2d35cdeb5))
+* **SocialComment:** add SocialComment ([36f297f](https://github.com/wuolah/types/commits/36f297f240059d2480638fa58444268299c413a4))
+* **SocialCommentLike:** remove type ([4eb2a62](https://github.com/wuolah/types/commits/4eb2a626e9e1dc67bba869dfb0b0a65ab5e54f70))
+* **Social:** update SocialEnum ([bef5a01](https://github.com/wuolah/types/commits/bef5a01a347a2ae1c34eca6e6bb6381ce1a9c6c7))
+
 ## [0.2.0](https://github.com/wuolah/types/compare/v0.1.13...v0.2.0) (2022-06-29)
 
 
