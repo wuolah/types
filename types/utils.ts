@@ -1,6 +1,9 @@
 export const stringToNumber = (defaultValue: number | null) => (val: unknown) =>
   parseInt(String(val), 10) || defaultValue;
 
+  export const stringToFloat = (defaultValue: number | null) => (val: unknown) =>
+  parseFloat(String(val)) || defaultValue;
+
 export const stringToBoolean =
   (defaultValue: boolean | null) => (val: unknown) =>
     val != undefined
