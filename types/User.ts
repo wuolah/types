@@ -20,7 +20,7 @@ export const UserSchema = ProfileSchema.extend({
   stripeId: z.string().optional(),
   countryId: z.number().nonnegative().optional(),
   gender: z.number().max(4).nonnegative().nullable().optional(),
-  birthday: z.string().nullable().optional(),
+  birthday: z.preprocess(dateToString(null), z.string().nullable().optional()),
   money: z.preprocess(
     stringToNumber(0),
     z.number().nonnegative().nullable().optional()
