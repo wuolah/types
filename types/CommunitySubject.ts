@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { CommunitySchema } from "./Community";
 import { SubjectSchema } from "./Subject";
-import { stringToBoolean } from "./utils";
+import { dateToString, stringToBoolean } from "./utils";
 
 export const CommunitySubjectSchema = z.object({
   id: z.number().positive(),
@@ -17,8 +17,8 @@ export const CommunitySubjectSchema = z.object({
   enabled: z
     .preprocess(stringToBoolean(null), z.boolean().nullable())
     .optional(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
+  createdAt: z.preprocess(dateToString(null), z.string()),
+  updatedAt: z.preprocess(dateToString(null), z.string()),
 
   community: CommunitySchema.optional(),
   subject: SubjectSchema.optional(),

@@ -1,11 +1,12 @@
 import { z } from "zod";
 import { ProfileSchema } from "./Profile";
 import { SocialSchema } from "./Social";
+import { dateToString } from "./utils";
 
 export const SocialCommentSchema = z.object({
   id: z.number().positive(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
+  createdAt: z.preprocess(dateToString(null), z.string()),
+  updatedAt: z.preprocess(dateToString(null), z.string()),
 
   text: z.string(),
   photoDirectory: z.string().optional().nullable(),
