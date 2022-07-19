@@ -17,3 +17,6 @@ export const stringToBoolean =
 export const stringToLowerCase =
   (defaultValue: string | null) => (val: unknown) =>
     String(val).toLowerCase() || defaultValue;
+
+export const dateToString = (defaultValue: string | null) => (val: unknown) =>
+  val instanceof Date ? (val as Date).toISOString() || defaultValue : val;

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { ProfileSchema } from "./Profile";
-import { stringToBoolean, stringToFloat, stringToNumber } from "./utils";
+import { dateToString, stringToBoolean, stringToFloat, stringToNumber } from "./utils";
 
 export const UserRole = {
   USER: 1,
@@ -16,11 +16,11 @@ export const UserSchema = ProfileSchema.extend({
   password: z.string().optional(),
   coins: z.number().nonnegative().optional(),
   captchaCounter: z.number().nonnegative().default(0),
-  lastConnection: z.string(),
+  lastConnection: z.preprocess(dateToString(null), z.string()),
   stripeId: z.string().optional(),
   countryId: z.number().nonnegative().optional(),
   gender: z.number().max(4).nonnegative().nullable().optional(),
-  birthday: z.string().nullable().optional(),
+  birthday: z.preprocess(dateToString(null), z.string().nullable().optional()),
   money: z.preprocess(
     stringToFloat(0),
     z.number().nonnegative().nullable().optional()
