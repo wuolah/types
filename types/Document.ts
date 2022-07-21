@@ -4,7 +4,7 @@ import { CommunitySchema } from "./Community";
 import { ProfileSchema } from "./Profile";
 import { SubjectSchema } from "./Subject";
 import { StudySchema } from "./Study";
-import { stringToBoolean } from "./utils";
+import { dateToString, stringToBoolean } from "./utils";
 
 export const DocumentCategory = {
   APUNTES: "apuntes",
@@ -19,8 +19,8 @@ export type DocumentCategoryType = z.infer<typeof DocumentCategorySchema>;
 
 export const DocumentSchema = z.object({
   id: z.number().positive(),
-  createdAt: z.string(),
-  updatedAt: z.string().optional(),
+  createdAt: z.preprocess(dateToString(null), z.string()),
+  updatedAt: z.preprocess(dateToString(null), z.string().optional()),
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),

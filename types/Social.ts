@@ -4,7 +4,7 @@ import { CommunitySchema } from "./Community";
 import { ProfileSchema } from "./Profile";
 import { StudySchema } from "./Study";
 import { SubjectSchema } from "./Subject";
-import { stringToBoolean, stringToLowerCase } from "./utils";
+import { dateToString, stringToBoolean, stringToLowerCase } from "./utils";
 
 export const SocialEnum = {
   DOUBT: "doubt",
@@ -21,8 +21,8 @@ export type SocialEnumType = z.infer<typeof SocialEnumSchema>;
 
 export const SocialSchema = z.object({
   id: z.number().nonnegative(),
-  createdAt: z.string(),
-  updatedAt: z.string().optional(),
+  createdAt: z.preprocess(dateToString(null), z.string()),
+  updatedAt: z.preprocess(dateToString(null), z.string().optional()),
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
