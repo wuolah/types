@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { stringToBoolean } from "./utils";
+import { dateToString, stringToBoolean } from "./utils";
 
 export const GiveawayTicketSchema = z.object({
   id: z.number().nonnegative(),
@@ -9,7 +9,7 @@ export const GiveawayTicketSchema = z.object({
   sourceType: z.string(),
   used: z.string().optional().nullable(),
   number: z.number().nonnegative().optional().nullable(),
-  createdAt: z.string().optional(),
+  createdAt: z.preprocess(dateToString(null), z.string().optional()),
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),

@@ -1,4 +1,11 @@
 import {
+  ArtifactSchema,
+  ArtifactType,
+  ArtifactTypeEnum,
+  ArtifactTypeSchema,
+  ArtifactTypeType,
+} from "./types/Artifact";
+import {
   BookmarkCommunitySchema,
   BookmarkCommunityType,
 } from "./types/BookmarkCommunity";
@@ -61,10 +68,18 @@ import {
   PaginationResponseType,
 } from "./types/ResponseBody";
 import { SearchReponseType } from "./types/SearchResponse";
+import {
+  SocialSchema,
+  SocialType,
+  SocialEnum,
+  SocialEnumType,
+} from "./types/Social";
+import { SocialCommentSchema, SocialCommentType } from "./types/SocialComment";
 import { SortSchema, SortType } from "./types/Sort";
 import { StudySchema, StudyType } from "./types/Study";
 import { SubjectSchema, SubjectType } from "./types/Subject";
 import { UniversitySchema, UniversityType } from "./types/University";
+import { UploadSchema, UploadType } from "./types/Upload";
 import {
   UserRole,
   UserRoleSchema,
@@ -74,6 +89,9 @@ import {
 } from "./types/User";
 
 export {
+  ArtifactSchema,
+  ArtifactTypeEnum,
+  ArtifactTypeSchema,
   BookmarkDocumentSchema,
   BookmarkUserSchema,
   BookmarkCommunitySchema,
@@ -108,8 +126,14 @@ export {
   GiveawayRequirementSchema,
   GiveawayStatus,
   GiveawayTicketSchema,
+  SocialEnum,
+  SocialSchema,
+  UploadSchema,
+  SocialCommentSchema,
 };
 export type {
+  ArtifactType,
+  ArtifactTypeType,
   BookmarkCommunityType,
   BookmarkSubjectType,
   BookmarkSubjectStatusType,
@@ -142,4 +166,8 @@ export type {
   GiveawayStatusType,
   GiveawayRequirementType,
   GiveawayTicketType,
+  SocialType,
+  SocialCommentType,
+  SocialEnumType,
+  UploadType,
 };

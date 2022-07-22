@@ -1,11 +1,11 @@
 {
   "name": "@wuolah/types",
-  "version": "0.1.13",
+  "version": "0.2.3",
   "description": "This library includes the [zod](https://www.npmjs.com/package/zod) schemas and its corresponding TypeScript definitions required by the Wuolah ecosystem.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "dependencies": {
-    "zod": "^3.11.6"
+    "zod": "3.17.3"
   },
   "devDependencies": {
     "standard-version": "^9.3.2",

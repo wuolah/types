@@ -1,37 +1,28 @@
 import { z } from "zod";
 import { CenterSchema } from "./Center";
 import { CommunitySchema } from "./Community";
+import { DocumentCategorySchema } from "./Document";
 import { ProfileSchema } from "./Profile";
-import { SubjectSchema } from "./Subject";
 import { StudySchema } from "./Study";
-import { dateToString, stringToBoolean } from "./utils";
+import { SubjectSchema } from "./Subject";
+import { dateToString, stringToBoolean, stringToNumber } from "./utils";
 
-export const DocumentCategory = {
-  APUNTES: "apuntes",
-  EXAMENES: "exámenes",
-  EJERCICIOS: "ejercicios",
-  PRACTICAS: "prácticas",
-  TRABAJOS: "trabajos",
-  OTROS: "otros",
-} as const;
-export const DocumentCategorySchema = z.nativeEnum(DocumentCategory);
-export type DocumentCategoryType = z.infer<typeof DocumentCategorySchema>;
-
-export const DocumentSchema = z.object({
-  id: z.number().positive(),
+export const UploadSchema = z.object({
+  id: z.number().nonnegative(),
   createdAt: z.preprocess(dateToString(null), z.string()),
   updatedAt: z.preprocess(dateToString(null), z.string().optional()),
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
-
+  course: z.preprocess(stringToNumber(0), z.number().nonnegative()),
   category: z.union([DocumentCategorySchema, z.string()]),
   name: z.string(),
-  extension: z.string(),
-  fileType: z.string(),
   teacher: z.string().nullable().optional(),
+  comments: z.string().nullable().optional(),
 
-  s3Key: z.string().optional(),
+  isFolder: z
+    .preprocess(stringToBoolean(false), z.boolean().nullable())
+    .optional(),
   isAnonymous: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
@@ -39,16 +30,30 @@ export const DocumentSchema = z.object({
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
 
-  numPages: z.number().nonnegative().default(0),
-  numPreviews: z.number().nonnegative().default(0),
-  numViews: z.number().nonnegative().default(0),
-  numDownloads: z.number().nonnegative().default(0),
-  numPremiumDownloads: z.number().nonnegative().default(0),
-  numBookmarks: z.number().nonnegative().default(0),
-  numLikes: z.number().nonnegative().default(0),
-  course: z.number().nonnegative(),
-
-  uploadId: z.number().nonnegative().optional(),
+  numFiles: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numPreviews: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numViews: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numDownloads: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numPremiumDownloads: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
+  numLikes: z.preprocess(
+    stringToNumber(0),
+    z.number().nonnegative().default(0)
+  ),
 
   userId: z.number().positive().nullable().optional(),
   communityId: z.number().nonnegative(),
@@ -63,4 +68,4 @@ export const DocumentSchema = z.object({
   study: StudySchema.optional(),
 });
 
-export type DocumentType = z.infer<typeof DocumentSchema>;
+export type UploadType = z.infer<typeof UploadSchema>;

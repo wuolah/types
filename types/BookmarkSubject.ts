@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { ProfileSchema } from "./Profile";
 import { CommunitySubjectSchema } from "./CommunitySubject";
+import { dateToString } from "./utils";
 
 export const BookmarkSubjectStatus = {
   IN_PROGRESS: "IN_PROGRESS",
@@ -18,7 +19,7 @@ export const BookmarkSubjectSchema = z.object({
   userId: z.number().positive(),
   communitySubjectId: z.number().nonnegative(),
   status: BookmarkSubjectStatusSchema,
-  createdAt: z.string(),
+  createdAt: z.preprocess(dateToString(null), z.string()),
   active: z.boolean(),
 
   user: ProfileSchema.optional(),

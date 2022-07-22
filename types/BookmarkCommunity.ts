@@ -2,7 +2,7 @@ import { z } from "zod";
 import { ProfileSchema } from "./Profile";
 import { CommunitySchema } from "./Community";
 import { BookmarkSubjectSchema } from "./BookmarkSubject";
-import { stringToBoolean } from "./utils";
+import { dateToString, stringToBoolean } from "./utils";
 
 export const BookmarkCommunitySchema = z.object({
   userId: z.number().positive(),
@@ -11,8 +11,8 @@ export const BookmarkCommunitySchema = z.object({
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
   role: z.number().positive().default(1),
-  createdAt: z.string(),
-  updatedAt: z.string(),
+  createdAt: z.preprocess(dateToString(null), z.string()),
+  updatedAt: z.preprocess(dateToString(null), z.string()),
   deleted: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
