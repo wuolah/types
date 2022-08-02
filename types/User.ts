@@ -1,6 +1,11 @@
 import { z } from "zod";
 import { ProfileSchema } from "./Profile";
-import { dateToString, stringToBoolean, stringToFloat, stringToNumber } from "./utils";
+import {
+  dateToString,
+  stringToBoolean,
+  stringToFloat,
+  stringToNumber,
+} from "./utils";
 
 export const UserRole = {
   USER: 1,
@@ -32,8 +37,11 @@ export const UserSchema = ProfileSchema.extend({
   displayMoney: z
     .preprocess(stringToBoolean(false), z.boolean().nullable())
     .optional(),
+  isPro: z.preprocess(stringToBoolean(null), z.boolean().nullable()).optional(),
+  hasHappyMonth: z
+    .preprocess(stringToBoolean(null), z.boolean().nullable())
+    .optional(),
   invitationCode: z.string().nullable().optional(),
-  pro: z.preprocess(stringToBoolean(null), z.boolean().nullable()).optional(),
 });
 
 export type UserType = z.infer<typeof UserSchema>;
