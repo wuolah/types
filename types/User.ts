@@ -41,6 +41,7 @@ export const UserSchema = ProfileSchema.extend({
   hasHappyMonth: z
     .preprocess(stringToBoolean(null), z.boolean().nullable())
     .optional(),
+  invitationCode: z.string().nullable().optional(),
 });
 
 export type UserType = z.infer<typeof UserSchema>;
