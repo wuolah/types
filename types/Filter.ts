@@ -2,6 +2,7 @@ import { z } from "zod";
 import { ArtifactTypeSchema } from "./Artifact";
 import { BookmarkSubjectStatusSchema } from "./BookmarkSubject";
 import { DocumentCategorySchema } from "./Document";
+import { GiveawayStatusSchema } from "./Giveaway";
 import { RankingCategorySchema } from "./Ranking";
 import { stringToBoolean, stringToNumber } from "./utils";
 
@@ -67,7 +68,10 @@ export const FilterSchema = z
       .preprocess(stringToNumber(null), z.number().positive())
       .optional(),
 
-    status: BookmarkSubjectStatusSchema.optional(),
+    status: z.union([
+      BookmarkSubjectStatusSchema.optional(),
+      GiveawayStatusSchema.optional(),
+    ]),
     username: z.union([z.array(z.string()), z.string()]).optional(),
 
     verified: z
